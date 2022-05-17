@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 const TopbarComponent = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
@@ -21,19 +24,18 @@ const TopbarComponent = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">
+            <span
+              className="nav-link"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               Home <span className="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Link
-            </a>
+            </span>
           </li>
           <li className="nav-item dropdown">
-            <a
+            <span
               className="nav-link dropdown-toggle"
-              href="#"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -41,14 +43,24 @@ const TopbarComponent = () => {
               aria-expanded="false"
             >
               Dropdown
-            </a>
+            </span>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="/movie">
+              <span
+                className="dropdown-item"
+                onClick={() => {
+                  navigate("/movie");
+                }}
+              >
                 Movie
-              </a>
-              <a className="dropdown-item" href="/theatre">
+              </span>
+              <span
+                className="dropdown-item"
+                onClick={() => {
+                  navigate("/theatre");
+                }}
+              >
                 Theatre
-              </a>
+              </span>
               <div className="dropdown-divider"></div>
               <a className="dropdown-item" href="#">
                 Something else here

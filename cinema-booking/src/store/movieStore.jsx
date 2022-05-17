@@ -5,8 +5,10 @@ export const movieStore = createSlice({
   initialState: { data: movies },
   reducers: {
     addMovie: (state, action) => {
-      let temp = state.data;
-      temp.unshift(action.payload);
+      console.log("triggered");
+      let temp = [...state.data];
+      const payload = action.payload.inputs;
+      temp.unshift(payload);
       state.data = temp;
     },
     deleteMovie: (state, action) => {
@@ -15,5 +17,5 @@ export const movieStore = createSlice({
   },
 });
 
-export const {addMovie,deleteMovie} = movieStore.actions;
+export const { addMovie, deleteMovie } = movieStore.actions;
 export default movieStore.reducer;
