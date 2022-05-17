@@ -6,6 +6,7 @@ import HomePageComponent from "./components/homePageComponent/homePageComponent"
 import TheatreForm from "./components/theatreFormComponent/theatreFormComponent";
 import MovieListComponent from "./components/movieListComponent/movieListComponent";
 import MovieFormComponent from "./components/movieFormComponent/movieFormComponent";
+import TheatreListComponent from "./components/thetatreListComponent/theatreListComponent";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<HomePageComponent />} />
-          <Route exact path="theatre" element={<TheatreForm />} />
+          <Route exact path="theatreForm" element={<TheatreForm />} />
+          <Route exact path="theatre" element={<TheatreListComponent />} />
           <Route exact path="movie" element={<MovieListComponent />} />
           <Route exact path="movieForm" element={<MovieFormComponent />} />
         </Routes>

@@ -33,7 +33,7 @@ const MovieFormComponent = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Enter Movie Name:
+        Enter Movie ID:
         <input
           type="text"
           name="id"
