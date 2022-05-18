@@ -61,10 +61,14 @@ const TopbarComponent = () => {
               >
                 Theatre
               </span>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
+              <span
+                className="dropdown-item"
+                onClick={() => {
+                  navigate("/session");
+                }}
+              >
+                Session
+              </span>
             </div>
           </li>
         </ul>
