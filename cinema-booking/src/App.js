@@ -9,6 +9,7 @@ import MovieFormComponent from "./components/movieFormComponent/movieFormCompone
 import TheatreListComponent from "./components/thetatreListComponent/theatreListComponent";
 import SessionListComponent from "./components/sessionListComponent/sessionListComponent";
 import SessionFormComponent from "./components/sessionFormComponent/sessionFormComponent";
+import BookingPageComponent from "./components/bookingPageComponent/bookingPageComponent";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Route exact path="movieForm" element={<MovieFormComponent />} />
           <Route exact path="session" element={<SessionListComponent />} />
           <Route exact path="sessionForm" element={<SessionFormComponent />} />
+          <Route exact path="booking/:id" element={<BookingPageComponent />} />
+
         </Routes>
       </BrowserRouter>
     </div>
