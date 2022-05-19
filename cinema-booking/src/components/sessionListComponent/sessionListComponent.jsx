@@ -27,9 +27,14 @@ const SessionListComponent = (props) => {
                 className="card"
                 style={{ width: "18rem", minHeight: "400px" }}
               >
+                <img className="card-img-top" src={session.movie.image} />
+
                 <div className="card-body">
                   <h5 className="card-title">{session.name}</h5>
-                  <h6>{session.numberOfSeats}</h6>
+                  <h6>{session.theatre.numberOfSeats}</h6>
+                  <h5 className="card-title">{session.movie.name}</h5>
+                  <h5 className="card-title">{session.theatre.name}</h5>
+
                   <a
                     href="#"
                     className="btn btn-primary"

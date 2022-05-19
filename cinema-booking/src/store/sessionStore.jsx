@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { sessions } from "../data/sessionData";
 
 export const sessionStore = createSlice({
     name: "sessionStore",
-    initialState: { data: [{}] },
+    initialState: { data: sessions },
     reducers: {
       addSession: (state, action) => {
         let temp = [...state.data];
