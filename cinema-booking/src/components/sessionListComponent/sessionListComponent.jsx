@@ -35,7 +35,7 @@ const SessionListComponent = (props) => {
                   <h5 className="card-title">{session.movie.name}</h5>
                   <h5 className="card-title">{session.theatre.name}</h5>
 
-                  <a
+                  <span
                     href="#"
                     className="btn btn-primary"
                     onClick={() => {
@@ -43,7 +43,16 @@ const SessionListComponent = (props) => {
                     }}
                   >
                     Delete
-                  </a>
+                  </span>
+                  <span
+                    href="#"
+                    className="btn btn-primary"
+                    onClick={() => {
+                     navigate("/booking/"+session.id);
+                    }}
+                  >
+                    Details
+                  </span>
                 </div>
               </div>
             </div>
