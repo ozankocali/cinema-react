@@ -1,8 +1,11 @@
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { addPurchase } from "../../store/purchaseStore";
 
 const BookingPageComponent = (props) => {
   const params = useParams();
+  const navigate = useNavigate();
+  const dispatch=useDispatch();
 
   const session = useSelector((state) => state.sessionStore.data).filter(
     (x) => x.id === params.id
@@ -11,16 +14,34 @@ const BookingPageComponent = (props) => {
   const seatList = [];
   const selectedList = [];
 
+  const newPurchase = {
+    movie: {},
+    theatre: {},
+    selectedSeats: [],
+  };
+
+  const purchase = () => {
+    newPurchase.movie = session.movie;
+    newPurchase.theatre = session.theatre;
+    newPurchase.selectedSeats = selectedList;
+
+    dispatch(addPurchase(newPurchase))
+    navigate("/purchase")
+    
+  };
+
   const selectSeat = (seatNumber) => {
-    selectedList.push(seatNumber);
-    document.getElementById("selectedSeats").innerHTML = selectedList;
-    document.getElementById("cost").innerHTML = selectedList.length * 15;
-    seatList.forEach((seat) => {
-      console.log(seat);
-      if(selectedList.includes(parseInt(seat.props.children.key))){
-        document.getElementById(seat.props.children.key).style.color="yellow";
-      }
-    });
+    if (!selectedList.includes(seatNumber)) {
+      selectedList.push(seatNumber);
+      document.getElementById("selectedSeats").innerHTML = selectedList;
+      document.getElementById("cost").innerHTML = selectedList.length * 15;
+      seatList.forEach((seat) => {
+        if (selectedList.includes(parseInt(seat.props.children.key))) {
+          document.getElementById(seat.props.children.key).style.color =
+            "yellow";
+        }
+      });
+    }
   };
 
   for (let i = 0; i < session.theatre.numberOfSeats; i++) {
@@ -62,6 +83,15 @@ const BookingPageComponent = (props) => {
           <div id="selectedSeats"></div>
           <h1>Costs:</h1>
           <div id="cost"></div>
+          <span
+            href="#"
+            className="btn btn-primary"
+            onClick={() => {
+              purchase();
+            }}
+          >
+            purchase
+          </span>
         </div>
       </div>
     </div>

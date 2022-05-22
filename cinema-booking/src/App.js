@@ -10,6 +10,8 @@ import TheatreListComponent from "./components/thetatreListComponent/theatreList
 import SessionListComponent from "./components/sessionListComponent/sessionListComponent";
 import SessionFormComponent from "./components/sessionFormComponent/sessionFormComponent";
 import BookingPageComponent from "./components/bookingPageComponent/bookingPageComponent";
+import LoginPageComponent from "./components/loginPageComponent/loginPageComponent";
+import PurchasePageComponent from "./components/purchasePageComponent/purchasePageComponent";
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
           <Route exact path="session" element={<SessionListComponent />} />
           <Route exact path="sessionForm" element={<SessionFormComponent />} />
           <Route exact path="booking/:id" element={<BookingPageComponent />} />
+          <Route exact path="login" element={<LoginPageComponent />} />
+          <Route exact path="purchase" element={<PurchasePageComponent />} />
+
+
 
         </Routes>
       </BrowserRouter>
