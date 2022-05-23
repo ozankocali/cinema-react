@@ -1,9 +1,11 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addPurchasedSeats } from "../../store/sessionStore";
 
 const PurchasePageComponent = (props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const purchase = useSelector((state) => state.purchaseStore.data);
   console.log(purchase);
@@ -14,6 +16,11 @@ const PurchasePageComponent = (props) => {
   //   }
   // }, [isLoggedIn]);
 
+
+  const purchaseAction=(seats)=>{
+    dispatch(addPurchasedSeats(seats));
+    navigate("/session")
+  }
 
 
   return (
@@ -42,6 +49,15 @@ const PurchasePageComponent = (props) => {
       <h6>
         {purchase.selectedSeats.length*15}
       </h6>
+      <span
+            href="#"
+            className="btn btn-primary"
+            onClick={() => {
+              purchaseAction(purchase.selectedSeats);
+            }}
+          >
+            purchase
+          </span>
     </div>
   )
 };

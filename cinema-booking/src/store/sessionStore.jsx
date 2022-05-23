@@ -14,8 +14,14 @@ export const sessionStore = createSlice({
       deleteSession: (state, action) => {
         state.data = state.data.filter((x) => x.id !== action.payload.id);
       },
+      addPurchasedSeats:(state,action)=>{
+        let seats=action.payload;
+        let temp=[...state.data[0].purchasedSeats];
+        temp.push(seats);
+        state.data[0].purchasedSeats=temp;
+      }
     },
   });
   
-  export const { addSession, deleteSession } = sessionStore.actions;
+  export const { addSession, deleteSession,addPurchasedSeats } = sessionStore.actions;
   export default sessionStore.reducer;

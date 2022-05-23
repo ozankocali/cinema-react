@@ -1,14 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { users } from "../data/userData";
 
 export const authStore = createSlice({
   name: "authStore",
   initialState: {
+    users:users,
     value: {
       isLoggedIn: false,
       loggedInError: "",
     },
   },
   reducers: {
+    addUser:(state,action)=>{
+      let temp = [...state.users];
+      const payload = action.payload.inputs;
+      temp.unshift(payload);
+      state.users = temp;
+    },
     login: (state, action) => {
       // state.value = state.value.filter((x) => x.id !== action.payload.id);
       if (

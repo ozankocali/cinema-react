@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { addPurchase } from "../../store/purchaseStore";
@@ -19,6 +20,12 @@ const BookingPageComponent = (props) => {
     theatre: {},
     selectedSeats: [],
   };
+
+  useEffect(() => {
+ 
+    disableSelected()
+
+  }, [seatList])
 
   const purchase = () => {
     newPurchase.movie = session.movie;
@@ -43,6 +50,32 @@ const BookingPageComponent = (props) => {
       });
     }
   };
+
+  const disableSelected=()=>{
+    
+    const bookedSeats=[];
+
+
+    session.purchasedSeats.forEach((purchase)=>{
+      purchase.forEach((seat)=>{
+        bookedSeats.push(seat);
+
+      })
+    })
+
+    seatList.forEach((seat) => {
+      if (bookedSeats.includes(parseInt(seat.props.children.key))) {
+        document.getElementById(seat.props.children.key).style.color =
+          "red";
+      }
+    });
+
+    console.log(bookedSeats);
+
+  }
+
+
+  
 
   for (let i = 0; i < session.theatre.numberOfSeats; i++) {
     const id = i.toString();
@@ -91,6 +124,15 @@ const BookingPageComponent = (props) => {
             }}
           >
             purchase
+          </span>
+          <span
+            href="#"
+            className="btn btn-primary"
+            onClick={() => {
+              disableSelected();
+            }}
+          >
+            disable
           </span>
         </div>
       </div>

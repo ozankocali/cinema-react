@@ -14,5 +14,6 @@ export const sessions = [
       name: "Theatre 1",
       numberOfSeats: "40",
     },
+    purchasedSeats:[]
   },
 ];
