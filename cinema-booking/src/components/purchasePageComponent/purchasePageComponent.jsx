@@ -10,11 +10,13 @@ const PurchasePageComponent = (props) => {
   const purchase = useSelector((state) => state.purchaseStore.data);
   console.log(purchase);
 
-  // useEffect(() => {
-  //   if (!isLoggedIn) {
-  //     navigate("/login");
-  //   }
-  // }, [isLoggedIn]);
+  const isLoggedIn=useSelector((state)=>state.authStore.value.isLoggedIn)
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/login");
+    }
+  }, [isLoggedIn]);
 
 
   const purchaseAction=(seats)=>{

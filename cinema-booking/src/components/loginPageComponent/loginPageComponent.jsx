@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { login } from "../../store/authStore";
 
 const LoginPageComponent=(props)=>{
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const LoginPageComponent=(props)=>{
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      dispatch(loginUser({ inputs: inputs }));
+      dispatch(login({ inputs: inputs }));
       alert(inputs);
     };
   
@@ -30,7 +31,7 @@ const LoginPageComponent=(props)=>{
     return (
       <form onSubmit={handleSubmit}>
         <label>
-          Enter Movie ID:
+          Enter Username:
           <input
             type="text"
             name="username"
@@ -39,7 +40,7 @@ const LoginPageComponent=(props)=>{
           />
         </label>
         <label>
-          Enter Movie Image:
+          Enter Password:
           <input
             type="text"
             name="password"

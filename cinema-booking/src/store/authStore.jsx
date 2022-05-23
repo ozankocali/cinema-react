@@ -4,7 +4,7 @@ import { users } from "../data/userData";
 export const authStore = createSlice({
   name: "authStore",
   initialState: {
-    users:users,
+    userList:users,
     value: {
       isLoggedIn: false,
       loggedInError: "",
@@ -19,22 +19,25 @@ export const authStore = createSlice({
     },
     login: (state, action) => {
       // state.value = state.value.filter((x) => x.id !== action.payload.id);
-      if (
-        action.payload.username === "ozan" &&
-        action.payload.password === "pass"
-      ) {
-        state.value = { isLoggedIn: true, loggedInError: "" };
-        console.log("login successfull", state.value.isLoggedIn);
-      } else {
-        state.value = {
-          isLoggedIn: false,
-          loggedInError: "Username or Password is wrong!",
-        };
-        console.log(
-          "Username or Password is wrong!",
-          state.value.loggedInError
-        );
-      }
+      state.userList.forEach((user)=>{
+        if (
+          action.payload.inputs.username === user.username &&
+          action.payload.inputs.password === user.password
+        ) {
+          state.value = { isLoggedIn: true, loggedInError: "" };
+          console.log("login successfull", state.value.isLoggedIn);
+        } else {
+          state.value = {
+            isLoggedIn: false,
+            loggedInError: "Username or Password is wrong!",
+          };
+          console.log(
+            "Username or Password is wrong!",
+            state.value.loggedInError
+          );
+        }
+      })
+
     },
   },
 });

@@ -4,4 +4,5 @@ export const users=[{
     fullName:"Ozan Koçali",
     email:"ozan.kocali@hotmail.com",
     role:"SUPER_ADMIN",
+    password:"secret"
 }]
