@@ -12,10 +12,10 @@ export const authStore = createSlice({
   },
   reducers: {
     addUser:(state,action)=>{
-      let temp = [...state.users];
+      let temp = [...state.userList];
       const payload = action.payload.inputs;
       temp.unshift(payload);
-      state.users = temp;
+      state.userList = temp;
     },
     login: (state, action) => {
       // state.value = state.value.filter((x) => x.id !== action.payload.id);
@@ -42,5 +42,5 @@ export const authStore = createSlice({
   },
 });
 
-export const { login } = authStore.actions;
+export const { login,addUser } = authStore.actions;
 export default authStore.reducer;
