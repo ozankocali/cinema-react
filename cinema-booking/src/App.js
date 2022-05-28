@@ -13,6 +13,7 @@ import BookingPageComponent from "./components/bookingPageComponent/bookingPageC
 import LoginPageComponent from "./components/loginPageComponent/loginPageComponent";
 import PurchasePageComponent from "./components/purchasePageComponent/purchasePageComponent";
 import SignUpPageComponent from "./components/signUpPageComponent/signUpPageComponent";
+import AfterPaymentPageComponent from "./components/afterPaymentPageComponent/afterPaymentPageComponent";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="login" element={<LoginPageComponent />} />
           <Route exact path="purchase" element={<PurchasePageComponent />} />
           <Route exact path="signup" element={<SignUpPageComponent />} />
+          <Route exact path="afterPayment" element={<AfterPaymentPageComponent />} />
         </Routes>
       </BrowserRouter>
     </div>
