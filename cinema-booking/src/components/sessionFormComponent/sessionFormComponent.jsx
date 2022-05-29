@@ -9,7 +9,6 @@ const SessionFormComponent = (props) => {
   const movieSelection = Object.assign([], movieList);
   const theatreSelection = Object.assign([], theatreList);
 
-
   const dispatch = useDispatch();
 
   const [inputs, setInputs] = useState({});
@@ -31,51 +30,49 @@ const SessionFormComponent = (props) => {
   }, [inputs]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Enter Session ID:
-        <input
-          type="text"
-          name="id"
-          value={inputs.id || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter Session Name:
-        <input
-          type="text"
-          name="name"
-          value={inputs.name || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
+    <div className="container">
+      <form onSubmit={handleSubmit}>
         <div class="form-group">
-          <label for="exampleFormControlSelect2">
-            Movie
-          </label>
+          <label>Enter Session ID:</label>
+          <input
+            class="form-control"
+            type="text"
+            name="id"
+            value={inputs.id || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div class="form-group">
+          <label>Enter Session Name:</label>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            value={inputs.name || ""}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Movie</label>
           <select
             multiple
             class="form-control"
-            id="exampleFormControlSelect2"
             name="movie"
             value={inputs.movie || {}}
             onChange={handleChange}
           >
             {movieSelection.map((option, index) => (
-              <option key={index} value={Object.assign({},option)}>
+              <option key={index} value={Object.assign({}, option)}>
                 {option.name}
               </option>
             ))}
           </select>
         </div>
-      </label>
-      <label>
+
         <div class="form-group">
-          <label for="exampleFormControlSelect3">
-            Theatre:
-          </label>
+          <label>Theatre:</label>
+
           <select
             multiple
             class="form-control"
@@ -85,15 +82,18 @@ const SessionFormComponent = (props) => {
             onChange={handleChange}
           >
             {theatreSelection.map((option, index) => (
-              <option key={index} value={Object.assign({},option)}>
+              <option key={index} value={Object.assign({}, option)}>
                 {option.name}
               </option>
             ))}
           </select>
         </div>
-      </label>
-      <input type="submit" />
-    </form>
+
+        <button type="submit" className="btn btn-success">
+          Send{" "}
+        </button>
+      </form>
+    </div>
   );
 };
 
