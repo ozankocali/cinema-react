@@ -27,7 +27,9 @@ const MovieListComponent = (props) => {
               <div
                 className="card"
               >
-                <img className="card-img-top movieImage" src={movie.image} />
+                <div className="movieImage">
+                <img className="card-img-top" src={movie.image} />
+                </div>
                 <div className="card-body">
                   <h5 className="card-title">{movie.name}</h5>
                   <h6>{movie.genre}</h6>

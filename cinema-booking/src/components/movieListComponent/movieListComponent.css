@@ -8,6 +8,10 @@
     height: 400px;
 }
 
+.card .movieImage{
+    height: 400px;
+}
+
 /* .movieList .movieImage{
     min-height: 200px;
     min-width: 400px;
