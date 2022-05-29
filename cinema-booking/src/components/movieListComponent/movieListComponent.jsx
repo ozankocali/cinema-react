@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { movies } from "../../data/movieData";
 import movieStore, { deleteMovie } from "../../store/movieStore";
+import "./movieListComponent.css"
 
 const MovieListComponent = (props) => {
   const movieList = useSelector((state) => state.movieStore.data);
@@ -10,12 +11,12 @@ const MovieListComponent = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="container">
+    <div className="container movieList">
       <span
         onClick={() => {
           navigate("/movieForm");
         }}
-        className="btn btn-primary"
+        className="btn btn-primary addMovie"
       >
         Add Movie
       </span>
@@ -25,9 +26,8 @@ const MovieListComponent = (props) => {
             <div className="col-sm" key={movie.id}>
               <div
                 className="card"
-                style={{ width: "18rem", minHeight: "400px" }}
               >
-                <img className="card-img-top" src={movie.image} />
+                <img className="card-img-top movieImage" src={movie.image} />
                 <div className="card-body">
                   <h5 className="card-title">{movie.name}</h5>
                   <h6>{movie.genre}</h6>

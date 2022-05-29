@@ -1,0 +1,14 @@
+.movieList{
+    text-align: center;
+}
+
+.card{
+    margin-top: 10px;
+    width: 400px;
+    height: 400px;
+}
+
+/* .movieList .movieImage{
+    min-height: 200px;
+    min-width: 400px;
+} */
