@@ -16,4 +16,21 @@ export const sessions = [
     },
     purchasedSeats:[]
   },
+  {
+    id: "2",
+    name: "session",
+    movie: {
+      id: "2",
+      name: "The Godfather",
+      genre: "Crime",
+      image:
+        "https://m.media-amazon.com/images/M/MV5BYWNlN2U4YjQtMzI3NC00ZjkxLWEwMTItYWRlNDUxYTYwYjVlXkEyXkFqcGdeQWpvaG5oYXJ0._V1_QL75_UX500_CR0,0,500,281_.jpg",
+    },
+    theatre: {
+      id: "2",
+      name: "Theatre 2",
+      numberOfSeats: "40",
+    },
+    purchasedSeats:[]
+  },
 ];

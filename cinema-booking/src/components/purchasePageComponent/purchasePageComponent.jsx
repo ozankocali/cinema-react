@@ -16,6 +16,11 @@ const PurchasePageComponent = (props) => {
     cvv: "",
   };
 
+  const newPurchase={
+    session:{},
+    seats:[]
+  }
+
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -35,12 +40,14 @@ const PurchasePageComponent = (props) => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/login");
+      //navigate("/login");
     }
   }, [isLoggedIn]);
 
   const purchaseAction = (seats) => {
-    dispatch(addPurchasedSeats(seats));
+    newPurchase.seats=seats;
+    newPurchase.session=purchase.session;
+    dispatch(addPurchasedSeats(newPurchase));
     navigate("/afterPayment");
   };
 
@@ -48,13 +55,13 @@ const PurchasePageComponent = (props) => {
     <div>
       <div className="container">
         <h1>movie</h1>
-        <h6>{purchase.movie.name}</h6>
+        <h6>{purchase?.session?.movie?.name}</h6>
         <h1>theatre</h1>
-        <h6>{purchase.theatre.name}</h6>
+        <h6>{purchase?.session?.theatre?.name}</h6>
         <h1>seats</h1>
-        <h6>{purchase.selectedSeats}</h6>
+        <h6>{purchase?.selectedSeats}</h6>
         <h1>cost</h1>
-        <h6>{purchase.selectedSeats.length * 15}</h6>
+        <h6>{purchase?.selectedSeats?.length * 15}</h6>
         <span
           href="#"
           className="btn btn-primary"

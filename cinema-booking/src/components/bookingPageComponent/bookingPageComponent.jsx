@@ -6,7 +6,7 @@ import { addPurchase } from "../../store/purchaseStore";
 const BookingPageComponent = (props) => {
   const params = useParams();
   const navigate = useNavigate();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const session = useSelector((state) => state.sessionStore.data).filter(
     (x) => x.id === params.id
@@ -16,25 +16,20 @@ const BookingPageComponent = (props) => {
   const selectedList = [];
 
   const newPurchase = {
-    movie: {},
-    theatre: {},
+    session: {},
     selectedSeats: [],
   };
 
   useEffect(() => {
- 
-    disableSelected()
-
-  }, [seatList])
+    disableSelected();
+  }, [seatList]);
 
   const purchase = () => {
-    newPurchase.movie = session.movie;
-    newPurchase.theatre = session.theatre;
+    newPurchase.session=session;
     newPurchase.selectedSeats = selectedList;
 
-    dispatch(addPurchase(newPurchase))
-    navigate("/purchase")
-    
+    dispatch(addPurchase(newPurchase));
+    navigate("/purchase");
   };
 
   const selectSeat = (seatNumber) => {
@@ -51,31 +46,23 @@ const BookingPageComponent = (props) => {
     }
   };
 
-  const disableSelected=()=>{
-    
-    const bookedSeats=[];
+  const disableSelected = () => {
+    const bookedSeats = [];
 
-
-    session.purchasedSeats.forEach((purchase)=>{
-      purchase.forEach((seat)=>{
+    session.purchasedSeats.forEach((purchase) => {
+      purchase.forEach((seat) => {
         bookedSeats.push(seat);
-
-      })
-    })
+      });
+    });
 
     seatList.forEach((seat) => {
       if (bookedSeats.includes(parseInt(seat.props.children.key))) {
-        document.getElementById(seat.props.children.key).style.color =
-          "red";
+        document.getElementById(seat.props.children.key).style.color = "red";
       }
     });
 
     console.log(bookedSeats);
-
-  }
-
-
-  
+  };
 
   for (let i = 0; i < session.theatre.numberOfSeats; i++) {
     const id = i.toString();
