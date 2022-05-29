@@ -34,63 +34,74 @@ const SignUpPageComponent = (props) => {
   }, [inputs]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Enter User ID:
-        <input
-          type="text"
-          name="id"
-          value={inputs.id || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter Username:
-        <input
-          type="text"
-          name="username"
-          value={inputs.username || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter User Fullname:
-        <input
-          type="text"
-          name="fullname"
-          value={inputs.fullname || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter User Email:
-        <input
-          type="text"
-          name="email"
-          value={inputs.email || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter Movie Image:
-        <input
-          type="text"
-          name="role"
-          value={inputs.role || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter Movie Image:
-        <input
-          type="text"
-          name="password"
-          value={inputs.password || ""}
-          onChange={handleChange}
-        />
-      </label>
-      <input type="submit" />
-    </form>
+    <div className="container">
+      <h1 style={{ textAlign: "center" }}>Sign Up</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Enter User ID:</label>
+          <input
+            className="form-control"
+            type="text"
+            name="id"
+            value={inputs.id || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Enter Username:</label>
+          <input
+            className="form-control"
+            type="text"
+            name="username"
+            value={inputs.username || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Enter User Fullname:</label>
+          <input
+            className="form-control"
+            type="text"
+            name="fullname"
+            value={inputs.fullname || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Enter User Email:</label>
+          <input
+            className="form-control"
+            type="text"
+            name="email"
+            value={inputs.email || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Enter Movie Image:</label>
+          <input
+            className="form-control"
+            type="text"
+            name="role"
+            value={inputs.role || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Enter Movie Image:</label>
+          <input
+            className="form-control"
+            type="text"
+            name="password"
+            value={inputs.password || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit" className="btn btn-success">
+          Sign Up
+        </button>
+      </form>
+    </div>
   );
 };
 
