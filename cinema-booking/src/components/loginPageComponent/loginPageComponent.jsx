@@ -31,31 +31,36 @@ const LoginPageComponent = (props) => {
   // }, [inputs]);
 
   return (
-    <div>
+    <div className="container">
+      <h1 style={{ textAlign: "center" }}>Log In</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Enter Username:
+        <div className="form-group">
+          <label>Enter Username:</label>
           <input
+            className="form-control"
             type="text"
             name="username"
             value={inputs.username || ""}
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Enter Password:
+        </div>
+        <div className="form-group">
+          <label>Enter Password:</label>
+
           <input
+            className="form-control"
             type="text"
             name="password"
             value={inputs.password || ""}
             onChange={handleChange}
           />
-        </label>
-        <input type="submit" />
+        </div>
+        <button type="submit" className="btn btn-success">Log In</button>
       </form>
       <small>
         If you dont have an account{" "}
-        <span style={{"color":"blue"}}
+        <span
+          style={{ color: "blue" }}
           onClick={() => {
             navigate("/signup");
           }}

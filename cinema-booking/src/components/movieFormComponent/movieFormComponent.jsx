@@ -32,7 +32,7 @@ const MovieFormComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{"textAlign":"center"}}>Add New Movie</h1>
+      <h1 >Add New Movie</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Enter Movie ID:</label>

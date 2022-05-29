@@ -11,7 +11,7 @@ const MovieListComponent = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="container movieList">
+    <div className="container" style={{"textAlign":"center"}}>
       <span
         onClick={() => {
           navigate("/movieForm");

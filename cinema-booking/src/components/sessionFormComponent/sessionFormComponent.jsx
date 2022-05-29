@@ -31,6 +31,7 @@ const SessionFormComponent = (props) => {
 
   return (
     <div className="container">
+      <h1 style={{"textAlign":"center"}}>Add New Session</h1>
       <form onSubmit={handleSubmit}>
         <div class="form-group">
           <label>Enter Session ID:</label>

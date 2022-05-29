@@ -32,6 +32,8 @@ const TheatreFormComponent = (props) => {
 
   return (
     <div className="container">
+      <h1 style={{"textAlign":"center"}}>Add New Session</h1>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Enter Theatre ID:</label>
@@ -63,7 +65,10 @@ const TheatreFormComponent = (props) => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-success"> Send</button>
+        <button type="submit" className="btn btn-success">
+          {" "}
+          Send
+        </button>
       </form>
     </div>
   );
