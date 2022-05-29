@@ -25,7 +25,7 @@ const BookingPageComponent = (props) => {
   }, [seatList]);
 
   const purchase = () => {
-    newPurchase.session=session;
+    newPurchase.session = session;
     newPurchase.selectedSeats = selectedList;
 
     dispatch(addPurchase(newPurchase));
@@ -67,12 +67,13 @@ const BookingPageComponent = (props) => {
   for (let i = 0; i < session.theatre.numberOfSeats; i++) {
     const id = i.toString();
     seatList.push(
-      <div className="card">
+      <div>
         <div
-          className="card-body"
+          className="container"
           id={id}
           key={i}
           onDoubleClick={() => selectSeat(i)}
+          style={{ height: "100px", width: "100px", border: "1px solid",borderTopLeftRadius:"10px",borderTopRightRadius:"10px",margin:"10px"}}
         >
           seat number {i}
         </div>
@@ -81,46 +82,40 @@ const BookingPageComponent = (props) => {
   }
 
   return (
-    <div className="row">
-      <div className="col">
-        <div className="container">
-          <h1>Session Name</h1>
-          <h4>{session.name}</h4>
-          <h1>Movie Name</h1>
-          <h4>{session.movie.name}</h4>
-          <h1>Theatre Name</h1>
-          <h4>{session.theatre.name}</h4>
-          <h1>seats Name</h1>
-
-          <div className="col">
-            <div>{seatList}</div>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <div className="container">
+            <h1>Session Name</h1>
+            <h4>{session.name}</h4>
+            <h1>Movie Name</h1>
+            <h4>{session.movie.name}</h4>
+            <h1>Theatre Name</h1>
+            <h4>{session.theatre.name}</h4>
+            <h1>seats Name</h1>
+          </div>
+        </div>
+        <div className="col">
+          <div className="container">
+            <h1>Selected Seats</h1>
+            <div id="selectedSeats"></div>
+            <h1>Costs:</h1>
+            <div id="cost"></div>
+            <span
+              href="#"
+              className="btn btn-primary"
+              onClick={() => {
+                purchase();
+              }}
+            >
+              purchase
+            </span>
           </div>
         </div>
       </div>
-      <div className="col">
-        <div className="container">
-          <h1>Selected Seats</h1>
-          <div id="selectedSeats"></div>
-          <h1>Costs:</h1>
-          <div id="cost"></div>
-          <span
-            href="#"
-            className="btn btn-primary"
-            onClick={() => {
-              purchase();
-            }}
-          >
-            purchase
-          </span>
-          <span
-            href="#"
-            className="btn btn-primary"
-            onClick={() => {
-              disableSelected();
-            }}
-          >
-            disable
-          </span>
+      <div className="row">
+        <div className="col">
+          <div className="row">{seatList}</div>
         </div>
       </div>
     </div>
