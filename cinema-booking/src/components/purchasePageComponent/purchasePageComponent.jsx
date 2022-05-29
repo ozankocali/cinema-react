@@ -16,10 +16,10 @@ const PurchasePageComponent = (props) => {
     cvv: "",
   };
 
-  const newPurchase={
-    session:{},
-    seats:[]
-  }
+  const newPurchase = {
+    session: {},
+    seats: [],
+  };
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -45,73 +45,81 @@ const PurchasePageComponent = (props) => {
   }, [isLoggedIn]);
 
   const purchaseAction = (seats) => {
-    newPurchase.seats=seats;
-    newPurchase.session=purchase.session;
+    newPurchase.seats = seats;
+    newPurchase.session = purchase.session;
     dispatch(addPurchasedSeats(newPurchase));
     navigate("/afterPayment");
   };
 
   return (
     <div>
-      <div className="container">
-        <h1>movie</h1>
-        <h6>{purchase?.session?.movie?.name}</h6>
-        <h1>theatre</h1>
-        <h6>{purchase?.session?.theatre?.name}</h6>
-        <h1>seats</h1>
-        <h6>{purchase?.selectedSeats}</h6>
-        <h1>cost</h1>
-        <h6>{purchase?.selectedSeats?.length * 15}</h6>
-        <span
-          href="#"
-          className="btn btn-primary"
-          onClick={() => {
-            purchaseAction(purchase.selectedSeats);
-          }}
-        >
-          purchase
-        </span>
+      <div className="row">
+        <div className="container">
+          <h1>movie</h1>
+          <h6>{purchase?.session?.movie?.name}</h6>
+          <h1>theatre</h1>
+          <h6>{purchase?.session?.theatre?.name}</h6>
+          <h1>seats</h1>
+          <h6>{purchase?.selectedSeats}</h6>
+          <h1>cost</h1>
+          <h6>{purchase?.selectedSeats?.length * 15}</h6>
+        </div>
       </div>
-      <div className="container">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Enter Card Owner Name:
+      <div className="row">
+        <div className="container">
+          <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Enter Card Owner Name:</label>
             <input
+            className="form-control"
               type="text"
               name="name"
               value={inputs.name || ""}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Enter Card Number:
+            </div>
+            <div className="form-group">
+            <label>Enter Card Number:</label>
             <input
+            className="form-control"
               type="text"
               name="cardNumber"
               value={inputs.cardNumber || ""}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Enter Valid Thru:
+            </div>
+            <div className="form-group">
+            <label>Enter Valid Thru:</label>
             <input
+            className="form-control"
               type="text"
               name="validThru"
               value={inputs.validThru || ""}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Enter CVV:
+            </div>
+            <div className="form-group">
+            <label>Enter CVV:</label>
             <input
+            className="form-control"
               type="text"
               name="cvv"
               value={inputs.cvv || ""}
               onChange={handleChange}
             />
-          </label>
-          {/* <input type="submit" /> */}
-        </form>
+            </div>
+            {/* <input type="submit" /> */}
+          </form>
+          <span
+            href="#"
+            className="btn btn-success"
+            onClick={() => {
+              purchaseAction(purchase.selectedSeats);
+            }}
+          >
+            purchase
+          </span>
+        </div>
       </div>
     </div>
   );
