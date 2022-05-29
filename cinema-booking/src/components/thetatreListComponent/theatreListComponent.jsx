@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteTheatre } from "../../store/theatreStore";
+import "./theatreListComponent.css"
 
 const TheatreListComponent = (props) => {
     const theatreList = useSelector((state) => state.theatreStore.data);
@@ -9,8 +10,8 @@ const TheatreListComponent = (props) => {
     const dispatch = useDispatch();
   
     return (
-      <div className="container">
-        <span
+      <div className="container" style={{"textAlign":"center"}}>
+        <span 
           onClick={() => {
             navigate("/theatreForm");
           }}
@@ -24,10 +25,11 @@ const TheatreListComponent = (props) => {
               <div className="col-sm" key={theatre.id}>
                 <div
                   className="card"
-                  style={{ width: "18rem", minHeight: "400px" }}
                 >
                   <div className="card-body">
+                    <h4>Theatre Name:</h4>
                     <h5 className="card-title">{theatre.name}</h5>
+                    <h4>Theatre Capacity:</h4>
                     <h6>{theatre.numberOfSeats}</h6>
                     <a href="#" className="btn btn-primary" onClick={()=>{dispatch(deleteTheatre(theatre))}}>
                       Delete
