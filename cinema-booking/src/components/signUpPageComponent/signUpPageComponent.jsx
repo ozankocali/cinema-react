@@ -1,3 +1,4 @@
+import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, login } from "../../store/authStore";
@@ -37,64 +38,81 @@ const SignUpPageComponent = (props) => {
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Sign Up</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Enter User ID:</label>
-          <input
-            className="form-control"
+        <div className="p-inputgroup">
+          <span className="p-inputgroup-addon">
+            <i className="pi-id-card"></i>
+          </span>
+          <InputText
             type="text"
             name="id"
             value={inputs.id || ""}
             onChange={handleChange}
+            placeholder="ID"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Username:</label>
-          <input
-            className="form-control"
+
+        <div className="p-inputgroup">
+          <span className="p-inputgroup-addon">
+            <i className="pi pi-user"></i>
+          </span>
+          <InputText
             type="text"
             name="username"
             value={inputs.username || ""}
             onChange={handleChange}
+            placeholder="Username"
           />
         </div>
-        <div className="form-group">
-          <label>Enter User Fullname:</label>
-          <input
-            className="form-control"
+
+        <div className="p-inputgroup">
+          <span className="p-inputgroup-addon">
+            <i className="pi pi-user"></i>
+          </span>
+          <InputText
             type="text"
             name="fullname"
             value={inputs.fullname || ""}
             onChange={handleChange}
+            placeholder="Full Name"
           />
         </div>
-        <div className="form-group">
-          <label>Enter User Email:</label>
-          <input
-            className="form-control"
+
+        <div className="p-inputgroup">
+          <span className="p-inputgroup-addon">
+            <i className="pi pi-user"></i>
+          </span>
+          <InputText
             type="text"
             name="email"
             value={inputs.email || ""}
             onChange={handleChange}
+            placeholder="Email"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Movie Image:</label>
-          <input
-            className="form-control"
+
+        <div className="p-inputgroup">
+          <span className="p-inputgroup-addon">
+            <i className="pi pi-user"></i>
+          </span>
+          <InputText
             type="text"
             name="role"
             value={inputs.role || ""}
             onChange={handleChange}
+            placeholder="Role"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Movie Image:</label>
-          <input
-            className="form-control"
+
+        <div className="p-inputgroup">
+          <span className="p-inputgroup-addon">
+            <i className="pi pi-user"></i>
+          </span>
+          <InputText
             type="text"
             name="password"
             value={inputs.password || ""}
             onChange={handleChange}
+            placeholder="Password"
           />
         </div>
         <button type="submit" className="btn btn-success">
