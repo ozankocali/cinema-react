@@ -15,6 +15,10 @@ import PurchasePageComponent from "./components/purchasePageComponent/purchasePa
 import SignUpPageComponent from "./components/signUpPageComponent/signUpPageComponent";
 import AfterPaymentPageComponent from "./components/afterPaymentPageComponent/afterPaymentPageComponent";
 
+import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+import "primereact/resources/primereact.min.css";                  //core css
+import "primeicons/primeicons.css";                                //icons
+
 function App() {
   return (
     <div>
