@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../store/authStore";
+import { InputText } from "primereact/inputtext";
 
 const LoginPageComponent = (props) => {
   const dispatch = useDispatch();
@@ -33,41 +34,52 @@ const LoginPageComponent = (props) => {
   return (
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Log In</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Enter Username:</label>
-          <input
-            className="form-control"
-            type="text"
-            name="username"
-            value={inputs.username || ""}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Enter Password:</label>
+      <div className="card">
+        <div className="container">
+          <form onSubmit={handleSubmit}>
+            <div className="p-inputgroup">
+              <span className="p-inputgroup-addon">
+                <i className="pi pi-user"></i>
+              </span>
+              <InputText
+                placeholder="Username"
+                type="text"
+                name="username"
+                value={inputs.username || ""}
+                onChange={handleChange}
+              />
+            </div>
 
-          <input
-            className="form-control"
-            type="text"
-            name="password"
-            value={inputs.password || ""}
-            onChange={handleChange}
-          />
+            <div className="p-inputgroup">
+              <span className="p-inputgroup-addon">
+                <i className="pi pi-key"></i>
+              </span>
+              <InputText
+                type="password"
+                name="password"
+                value={inputs.password || ""}
+                onChange={handleChange}
+                placeholder="Password"
+              />
+            </div>
+
+            <button type="submit" className="btn btn-success">
+              Log In
+            </button>
+          </form>
+          <small>
+            If you dont have an account{" "}
+            <span
+              style={{ color: "blue" }}
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              click here!
+            </span>
+          </small>
         </div>
-        <button type="submit" className="btn btn-success">Log In</button>
-      </form>
-      <small>
-        If you dont have an account{" "}
-        <span
-          style={{ color: "blue" }}
-          onClick={() => {
-            navigate("/signup");
-          }}
-        >
-          click here!
-        </span>
-      </small>
+      </div>
     </div>
   );
 };
