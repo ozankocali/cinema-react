@@ -1,13 +1,39 @@
+import { faFilm, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addSession } from "../../store/sessionStore";
+import { Dropdown } from "primereact/dropdown";
 
 const SessionFormComponent = (props) => {
   const theatreList = useSelector((state) => state.theatreStore.data);
   const movieList = useSelector((state) => state.movieStore.data);
 
+  const dropdownMovies = [];
+
+  const dropdownTheatres=[];
+
   const movieSelection = Object.assign([], movieList);
+
   const theatreSelection = Object.assign([], theatreList);
+
+
+  movieSelection.map((movie) => {
+    dropdownMovies.push({ name: movie.name, value: movie });
+  });
+
+  theatreSelection.map((theatre) => {
+    dropdownTheatres.push({ name: theatre.name, value: theatre });
+  });
+
+  const newSession={
+    id:"",
+    name:"",
+    movie:{},
+    theatre:{},
+  }
+
 
   const dispatch = useDispatch();
 
@@ -31,67 +57,62 @@ const SessionFormComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{"textAlign":"center"}}>Add New Session</h1>
+      <h1 style={{ textAlign: "center" }}>Add New Session</h1>
       <form onSubmit={handleSubmit}>
-        <div class="form-group">
-          <label>Enter Session ID:</label>
-          <input
-            class="form-control"
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+            <FontAwesomeIcon icon={faIdCard} />
+          </span>
+          <InputText
             type="text"
             name="id"
             value={inputs.id || ""}
             onChange={handleChange}
+            placeholder="ID"
           />
         </div>
-        <div class="form-group">
-          <label>Enter Session Name:</label>
-          <input
-            class="form-control"
+
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+            <FontAwesomeIcon icon={faFilm} />
+          </span>
+          <InputText
             type="text"
             name="name"
             value={inputs.name || ""}
             onChange={handleChange}
+            placeholder="Name"
           />
         </div>
 
-        <div class="form-group">
-          <label>Movie</label>
-          <select
-            multiple
-            class="form-control"
-            name="movie"
-            value={inputs.movie || {}}
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+            <FontAwesomeIcon icon={faFilm} />
+          </span>
+          <Dropdown
+            optionLabel="name"
+            value={inputs.movie || ""}
+            options={dropdownMovies}
             onChange={handleChange}
-          >
-            {movieSelection.map((option, index) => (
-              <option key={index} value={Object.assign({}, option)}>
-                {option.name}
-              </option>
-            ))}
-          </select>
+            placeholder="Select a Movie"
+          />
         </div>
 
-        <div class="form-group">
-          <label>Theatre:</label>
-
-          <select
-            multiple
-            class="form-control"
-            id="exampleFormControlSelect3"
-            name="theatre"
-            value={inputs.theatre || {}}
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+            <FontAwesomeIcon icon={faFilm} />
+          </span>
+          <Dropdown
+            optionLabel="theatre"
+            value={inputs.theatre || ""}
+            options={dropdownMovies}
             onChange={handleChange}
-          >
-            {theatreSelection.map((option, index) => (
-              <option key={index} value={Object.assign({}, option)}>
-                {option.name}
-              </option>
-            ))}
-          </select>
+            placeholder="Select a Theatre"
+          />
         </div>
 
-        <button type="submit" className="btn btn-success">
-          Send{" "}
+        <button type="submit" className="btn btn-success mt-2">
+          Send
         </button>
       </form>
     </div>

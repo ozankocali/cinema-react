@@ -1,3 +1,6 @@
+import { faBarsStaggered, faFilm, faIdCard, faImage } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import movieStore, { addMovie } from "../../store/movieStore";
@@ -34,48 +37,58 @@ const MovieFormComponent = (props) => {
     <div className="container">
       <h1 >Add New Movie</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Enter Movie ID:</label>
-          <input
-            className="form-control"
+      <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+           <FontAwesomeIcon icon={faIdCard} />
+          </span>
+          <InputText
             type="text"
             name="id"
             value={inputs.id || ""}
             onChange={handleChange}
+            placeholder="ID"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Movie Name:</label>
-          <input
-            className="form-control"
+
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+           <FontAwesomeIcon icon={faFilm} />
+          </span>
+          <InputText
             type="text"
             name="name"
             value={inputs.name || ""}
             onChange={handleChange}
+            placeholder="Name"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Movie Genre:</label>
 
-          <input
-            className="form-control"
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+           <FontAwesomeIcon icon={faBarsStaggered} />
+          </span>
+          <InputText
             type="text"
             name="genre"
             value={inputs.genre || ""}
             onChange={handleChange}
+            placeholder="Genre"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Movie Image:</label>
-          <input
-            className="form-control"
-            type="text"
+
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+           <FontAwesomeIcon icon={faImage} />
+          </span>
+          <InputText
+               type="text"
             name="image"
             value={inputs.image || ""}
             onChange={handleChange}
+            placeholder="Image"
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary mt-2">
           Send
         </button>
       </form>

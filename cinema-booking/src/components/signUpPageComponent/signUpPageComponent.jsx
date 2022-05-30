@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, login } from "../../store/authStore";
 import movieStore, { addMovie } from "../../store/movieStore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIdCard,faEnvelope, faPersonCircleExclamation, faLockOpen } from '@fortawesome/free-solid-svg-icons'
+
 
 const SignUpPageComponent = (props) => {
   const dispatch = useDispatch();
@@ -38,9 +41,9 @@ const SignUpPageComponent = (props) => {
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Sign Up</h1>
       <form onSubmit={handleSubmit}>
-        <div className="p-inputgroup">
+        <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-            <i className="pi-id-card"></i>
+           <FontAwesomeIcon icon={faIdCard} />
           </span>
           <InputText
             type="text"
@@ -51,7 +54,7 @@ const SignUpPageComponent = (props) => {
           />
         </div>
 
-        <div className="p-inputgroup">
+        <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
             <i className="pi pi-user"></i>
           </span>
@@ -64,7 +67,7 @@ const SignUpPageComponent = (props) => {
           />
         </div>
 
-        <div className="p-inputgroup">
+        <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
             <i className="pi pi-user"></i>
           </span>
@@ -77,9 +80,9 @@ const SignUpPageComponent = (props) => {
           />
         </div>
 
-        <div className="p-inputgroup">
+        <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-            <i className="pi pi-user"></i>
+          <FontAwesomeIcon icon={faEnvelope} />
           </span>
           <InputText
             type="text"
@@ -90,9 +93,9 @@ const SignUpPageComponent = (props) => {
           />
         </div>
 
-        <div className="p-inputgroup">
+        <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-            <i className="pi pi-user"></i>
+          <FontAwesomeIcon icon={faPersonCircleExclamation} />
           </span>
           <InputText
             type="text"
@@ -103,9 +106,9 @@ const SignUpPageComponent = (props) => {
           />
         </div>
 
-        <div className="p-inputgroup">
+        <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-            <i className="pi pi-user"></i>
+          <FontAwesomeIcon icon={faLockOpen} />
           </span>
           <InputText
             type="text"
@@ -115,7 +118,7 @@ const SignUpPageComponent = (props) => {
             placeholder="Password"
           />
         </div>
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="btn btn-success mt-2">
           Sign Up
         </button>
       </form>

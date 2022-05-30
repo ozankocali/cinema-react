@@ -40,7 +40,7 @@ const PurchasePageComponent = (props) => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      //navigate("/login");
+      navigate("/login");
     }
   }, [isLoggedIn]);
 

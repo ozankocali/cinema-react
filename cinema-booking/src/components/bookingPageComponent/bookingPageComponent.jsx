@@ -33,18 +33,53 @@ const BookingPageComponent = (props) => {
   };
 
   const selectSeat = (seatNumber) => {
-    if (!selectedList.includes(seatNumber)) {
-      selectedList.push(seatNumber);
-      document.getElementById("selectedSeats").innerHTML = selectedList;
-      document.getElementById("cost").innerHTML = selectedList.length * 15;
-      seatList.forEach((seat) => {
-        if (selectedList.includes(parseInt(seat.props.children.key))) {
-          document.getElementById(seat.props.children.key).style.color =
-            "yellow";
-        }
+    const bookedSeats = [];
+
+    session.purchasedSeats.forEach((purchase) => {
+      purchase.forEach((seat) => {
+        bookedSeats.push(seat);
       });
+    });
+
+    if (!bookedSeats.includes(parseInt(seatNumber))) {
+      if (!selectedList.includes(seatNumber)) {
+        selectedList.push(seatNumber);
+        document.getElementById("selectedSeats").innerHTML = selectedList;
+        document.getElementById("cost").innerHTML = selectedList.length * 15;
+        seatList.forEach((seat) => {
+          if (selectedList.includes(parseInt(seat.props.children.key))) {
+            document.getElementById(seat.props.children.key).style.color =
+              "yellow";
+          }
+        });
+      }
     }
   };
+
+  for (let i = 0; i < session.theatre.numberOfSeats; i++) {
+    const id = i.toString();
+    seatList.push(
+      <div>
+        <div
+          className="container"
+          id={id}
+          key={i}
+          onClick={() => selectSeat(i)}
+          style={{
+            height: "100px",
+            width: "100px",
+            border: "1px solid",
+            borderTopLeftRadius: "10px",
+            borderTopRightRadius: "10px",
+            margin: "10px",
+            userSelect: "none",
+          }}
+        >
+          seat number {i}
+        </div>
+      </div>
+    );
+  }
 
   const disableSelected = () => {
     const bookedSeats = [];
@@ -58,28 +93,16 @@ const BookingPageComponent = (props) => {
     seatList.forEach((seat) => {
       if (bookedSeats.includes(parseInt(seat.props.children.key))) {
         document.getElementById(seat.props.children.key).style.color = "red";
+        document
+          .getElementById(seat.props.children.key)
+          .removeAttribute("onclick");
+
+        console.log(seat);
       }
     });
 
     console.log(bookedSeats);
   };
-
-  for (let i = 0; i < session.theatre.numberOfSeats; i++) {
-    const id = i.toString();
-    seatList.push(
-      <div>
-        <div
-          className="container"
-          id={id}
-          key={i}
-          onDoubleClick={() => selectSeat(i)}
-          style={{ height: "100px", width: "100px", border: "1px solid",borderTopLeftRadius:"10px",borderTopRightRadius:"10px",margin:"10px"}}
-        >
-          seat number {i}
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="container">

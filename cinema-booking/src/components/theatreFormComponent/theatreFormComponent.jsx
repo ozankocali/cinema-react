@@ -1,3 +1,6 @@
+import { faFilm, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import movieStore, { addMovie } from "../../store/movieStore";
@@ -35,37 +38,48 @@ const TheatreFormComponent = (props) => {
       <h1 style={{"textAlign":"center"}}>Add New Session</h1>
 
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Enter Theatre ID:</label>
-          <input
-            className="form-control"
+      <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+           <FontAwesomeIcon icon={faIdCard} />
+          </span>
+          <InputText
             type="text"
             name="id"
             value={inputs.id || ""}
             onChange={handleChange}
+            placeholder="ID"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Theatre Name:</label>
-          <input
-            className="form-control"
+        
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+           <FontAwesomeIcon icon={faFilm} />
+          </span>
+          <InputText
             type="text"
             name="name"
             value={inputs.name || ""}
             onChange={handleChange}
+            placeholder="Name"
           />
         </div>
-        <div className="form-group">
-          <label>Enter Theatre Number Of Seats:</label>
-          <input
-            className="form-control"
+
+
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+           <FontAwesomeIcon icon={faIdCard} />
+          </span>
+          <InputText
             type="text"
             name="numberOfSeats"
             value={inputs.numberOfSeats || ""}
             onChange={handleChange}
+            placeholder="Number of Seats"
           />
         </div>
-        <button type="submit" className="btn btn-success">
+
+        
+        <button type="submit" className="btn btn-success mt-2">
           {" "}
           Send
         </button>

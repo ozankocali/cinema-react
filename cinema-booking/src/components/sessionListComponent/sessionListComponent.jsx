@@ -23,17 +23,17 @@ const SessionListComponent = (props) => {
       <div className="row">
         {sessionList.map((session) => {
           return (
-            <div className="col-sm" key={session.id}>
+            <div className="col-sm" key={session?.id}>
               <div
                 className="card"
               ><div className="movieImage">
-                <img className="card-img-top " src={session.movie.image} />
+                <img className="card-img-top " src={session?.movie?.image} />
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">{session.name}</h5>
-                  <h6>{session.theatre.numberOfSeats}</h6>
-                  <h5 className="card-title">{session.movie.name}</h5>
-                  <h5 className="card-title">{session.theatre.name}</h5>
+                  <h5 className="card-title">{session?.name}</h5>
+                  <h6>{session.theatre?.numberOfSeats}</h6>
+                  <h5 className="card-title">{session?.movie?.name}</h5>
+                  <h5 className="card-title">{session?.theatre?.name}</h5>
 
                   <span
                     className="btn btn-primary button"
@@ -47,7 +47,7 @@ const SessionListComponent = (props) => {
                    
                     className="btn btn-primary button"
                     onClick={() => {
-                     navigate("/booking/"+session.id);
+                     navigate("/booking/"+session?.id);
                     }}
                   >
                     Details
