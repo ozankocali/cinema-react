@@ -84,7 +84,7 @@ const BookingPageComponent = (props) => {
   const disableSelected = () => {
     const bookedSeats = [];
 
-    session.purchasedSeats.forEach((purchase) => {
+    session?.purchasedSeats?.forEach((purchase) => {
       purchase.forEach((seat) => {
         bookedSeats.push(seat);
       });
@@ -106,34 +106,66 @@ const BookingPageComponent = (props) => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
-          <div className="container">
-            <h1>Session Name</h1>
-            <h4>{session.name}</h4>
-            <h1>Movie Name</h1>
-            <h4>{session.movie.name}</h4>
-            <h1>Theatre Name</h1>
-            <h4>{session.theatre.name}</h4>
-            <h1>seats Name</h1>
+      <h1 style={{ textAlign: "center" }}>Select Your Seat</h1>
+      <div className="card">
+        <div className="row">
+          <div className="col">
+            <div className="container">
+              <div className="row">
+                <h3>Session Name: </h3>
+                <h3>{session.name}</h3>
+              </div>
+              <div className="row">
+                <h3>Movie Name: </h3>
+                <h3>{session.movie.name}</h3>
+              </div>
+              <div className="row">
+                <h3>Theatre Name:</h3>
+                <h3>{session.theatre.name}</h3>
+              </div>
+              <div className="row">
+                <h3>Seat Layout:</h3>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="container">
+              <div className="row">
+                <h3>Selected Seats:</h3>
+                <h3 id="selectedSeats"></h3>
+              </div>
+              <div className="row">
+                <h3>Costs:</h3>
+                <h3 id="cost"></h3>
+              </div>
+              <span
+                href="#"
+                className="btn btn-primary"
+                onClick={() => {
+                  purchase();
+                }}
+              >
+                purchase
+              </span>
+            </div>
           </div>
         </div>
-        <div className="col">
-          <div className="container">
-            <h1>Selected Seats</h1>
-            <div id="selectedSeats"></div>
-            <h1>Costs:</h1>
-            <div id="cost"></div>
-            <span
-              href="#"
-              className="btn btn-primary"
-              onClick={() => {
-                purchase();
-              }}
-            >
-              purchase
-            </span>
-          </div>
+      </div>
+      <div className="row">
+        <div
+          className="container"
+          style={{
+            height: "30px",
+            width: "1060px",
+            border: "1px solid",
+            borderTopLeftRadius: "10px",
+            borderTopRightRadius: "10px",
+            margin: "10px",
+            userSelect: "none",
+            textAlign: "center",
+          }}
+        >
+          Screen
         </div>
       </div>
       <div className="row">
