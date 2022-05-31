@@ -26,17 +26,20 @@ const HomePageComponent = () => {
 
   const movieTemplate = (movie) => {
     return (
-      <img 
-        style={{ height: "600px", width: "800px","alignContent":"center" }}
-        src={movie.image}
-        alt={movie.name}
-      />
+      <div>
+        <img
+          style={{ height: "500px", width: "1000px", alignContent: "center" }}
+          src={movie.image}
+          alt={movie.name}
+        />
+        <h5>{movie.name}</h5>
+      </div>
     );
   };
 
   return (
-    <div className="container">
-      <h1>home</h1>
+    <div className="container" style={{ textAlign: "center" }}>
+      <h1>Films Now Showing</h1>
       <Carousel
         numVisible={1}
         numScroll={1}
