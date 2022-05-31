@@ -1,3 +1,6 @@
+import { faFilm, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -55,64 +58,86 @@ const PurchasePageComponent = (props) => {
     <div>
       <div className="row">
         <div className="container">
-          <h1>movie</h1>
-          <h6>{purchase?.session?.movie?.name}</h6>
-          <h1>theatre</h1>
-          <h6>{purchase?.session?.theatre?.name}</h6>
-          <h1>seats</h1>
-          <h6>{purchase?.selectedSeats}</h6>
-          <h1>cost</h1>
-          <h6>{purchase?.selectedSeats?.length * 15}</h6>
+          <h1 style={{ textAlign: "center" }}>Purchase Info</h1>
+          <div className="card">
+            <div className="col">
+              <div className="row">
+                <h3>movie:</h3>
+                <h3>{purchase?.session?.movie?.name}</h3>
+              </div>
+              <div className="row">
+                <h3>theatre:</h3>
+                <h3>{purchase?.session?.theatre?.name}</h3>
+              </div>
+              <div className="row">
+                <h3>seats:</h3>
+                <h6>{purchase?.selectedSeats}</h6>
+              </div>
+              <div className="row">
+                <h3>cost:</h3>
+                <h3>{purchase?.selectedSeats?.length * 15}</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="row">
         <div className="container">
+          <h1 style={{ textAlign: "center" }}>Payment Info</h1>
           <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Enter Card Owner Name:</label>
-            <input
-            className="form-control"
-              type="text"
-              name="name"
-              value={inputs.name || ""}
-              onChange={handleChange}
-            />
+            <div className="p-inputgroup mt-2">
+              <span className="p-inputgroup-addon">
+                <FontAwesomeIcon icon={faFilm} />
+              </span>
+              <InputText
+                type="text"
+                name="name"
+                value={inputs.name || ""}
+                onChange={handleChange}
+                placeholder="Card Owner Name"
+              />
             </div>
-            <div className="form-group">
-            <label>Enter Card Number:</label>
-            <input
-            className="form-control"
-              type="text"
-              name="cardNumber"
-              value={inputs.cardNumber || ""}
-              onChange={handleChange}
-            />
+            <div className="p-inputgroup mt-2">
+              <span className="p-inputgroup-addon">
+                <FontAwesomeIcon icon={faIdCard} />
+              </span>
+              <InputText
+                type="text"
+                name="cardNumber"
+                value={inputs.cardNumber || ""}
+                onChange={handleChange}
+                placeholder="Card Number"
+              />
             </div>
-            <div className="form-group">
-            <label>Enter Valid Thru:</label>
-            <input
-            className="form-control"
-              type="text"
-              name="validThru"
-              value={inputs.validThru || ""}
-              onChange={handleChange}
-            />
+            <div className="p-inputgroup mt-2">
+              <span className="p-inputgroup-addon">
+                <FontAwesomeIcon icon={faIdCard} />
+              </span>
+              <InputText
+                type="text"
+                name="validThru"
+                value={inputs.validThru || ""}
+                onChange={handleChange}
+                placeholder="Valid Thru"
+              />
             </div>
-            <div className="form-group">
-            <label>Enter CVV:</label>
-            <input
-            className="form-control"
-              type="text"
-              name="cvv"
-              value={inputs.cvv || ""}
-              onChange={handleChange}
-            />
+            <div className="p-inputgroup mt-2">
+              <span className="p-inputgroup-addon">
+                <FontAwesomeIcon icon={faIdCard} />
+              </span>
+              <InputText
+                type="text"
+                name="cvv"
+                value={inputs.cvv || ""}
+                onChange={handleChange}
+                placeholder="CVV"
+              />
             </div>
             {/* <input type="submit" /> */}
           </form>
           <span
             href="#"
-            className="btn btn-success"
+            className="btn btn-success mt-2"
             onClick={() => {
               purchaseAction(purchase.selectedSeats);
             }}

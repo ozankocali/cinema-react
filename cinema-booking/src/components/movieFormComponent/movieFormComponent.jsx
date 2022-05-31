@@ -1,4 +1,9 @@
-import { faBarsStaggered, faFilm, faIdCard, faImage } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBarsStaggered,
+  faFilm,
+  faIdCard,
+  faImage,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
@@ -35,11 +40,11 @@ const MovieFormComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 >Add New Movie</h1>
+      <h1>Add New Movie</h1>
       <form onSubmit={handleSubmit}>
-      <div className="p-inputgroup mt-2">
+        <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-           <FontAwesomeIcon icon={faIdCard} />
+            <FontAwesomeIcon icon={faIdCard} />
           </span>
           <InputText
             type="text"
@@ -52,7 +57,7 @@ const MovieFormComponent = (props) => {
 
         <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-           <FontAwesomeIcon icon={faFilm} />
+            <FontAwesomeIcon icon={faFilm} />
           </span>
           <InputText
             type="text"
@@ -65,7 +70,7 @@ const MovieFormComponent = (props) => {
 
         <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-           <FontAwesomeIcon icon={faBarsStaggered} />
+            <FontAwesomeIcon icon={faBarsStaggered} />
           </span>
           <InputText
             type="text"
@@ -78,10 +83,10 @@ const MovieFormComponent = (props) => {
 
         <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-           <FontAwesomeIcon icon={faImage} />
+            <FontAwesomeIcon icon={faImage} />
           </span>
           <InputText
-               type="text"
+            type="text"
             name="image"
             value={inputs.image || ""}
             onChange={handleChange}
