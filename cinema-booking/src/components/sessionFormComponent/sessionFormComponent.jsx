@@ -9,15 +9,13 @@ import { Dropdown } from "primereact/dropdown";
 const SessionFormComponent = (props) => {
   const theatreList = useSelector((state) => state.theatreStore.data);
   const movieList = useSelector((state) => state.movieStore.data);
+  const dispatch = useDispatch();
+  const [inputs, setInputs] = useState({});
 
   const dropdownMovies = [];
-
-  const dropdownTheatres=[];
-
+  const dropdownTheatres = [];
   const movieSelection = Object.assign([], movieList);
-
   const theatreSelection = Object.assign([], theatreList);
-
 
   movieSelection.map((movie) => {
     dropdownMovies.push({ name: movie.name, value: movie });
@@ -27,17 +25,12 @@ const SessionFormComponent = (props) => {
     dropdownTheatres.push({ name: theatre.name, value: theatre });
   });
 
-  const newSession={
-    id:"",
-    name:"",
-    movie:{},
-    theatre:{},
-  }
-
-
-  const dispatch = useDispatch();
-
-  const [inputs, setInputs] = useState({});
+  const newSession = {
+    id: "",
+    name: "",
+    movie: {},
+    theatre: {},
+  };
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -91,10 +84,11 @@ const SessionFormComponent = (props) => {
           </span>
           <Dropdown
             optionLabel="name"
-            value={inputs.movie || ""}
+            name="movie"
+            value={inputs.movie}
             options={dropdownMovies}
             onChange={handleChange}
-            placeholder="Select a Movie"
+            placeholder={inputs?.movie?.name || "Select a Movie"}
           />
         </div>
 
@@ -103,11 +97,12 @@ const SessionFormComponent = (props) => {
             <FontAwesomeIcon icon={faFilm} />
           </span>
           <Dropdown
-            optionLabel="theatre"
-            value={inputs.theatre || ""}
-            options={dropdownMovies}
+            name="theatre"
+            optionLabel="name"
+            value={inputs.theatre}
+            options={dropdownTheatres}
             onChange={handleChange}
-            placeholder="Select a Theatre"
+            placeholder={inputs?.theatre?.name || "Select a Theatre"}
           />
         </div>
 
