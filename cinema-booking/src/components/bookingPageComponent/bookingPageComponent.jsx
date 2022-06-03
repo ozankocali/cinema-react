@@ -73,9 +73,10 @@ const BookingPageComponent = (props) => {
             borderTopRightRadius: "10px",
             margin: "10px",
             userSelect: "none",
+            textAlign:"center"
           }}
         >
-          seat number {i}
+          Seat Number: {i}
         </div>
       </div>
     );
@@ -171,6 +172,21 @@ const BookingPageComponent = (props) => {
       <div className="row">
         <div className="col">
           <div className="row">{seatList}</div>
+          <div
+            className="container"
+            style={{
+              height: "30px",
+              width: "600px",
+              border: "1px solid",
+              borderTopLeftRadius: "10px",
+              borderTopRightRadius: "10px",
+              userSelect: "none",
+              textAlign: "center",
+              marginLeft:"460px",
+            }}
+          >
+            Door
+          </div>
         </div>
       </div>
     </div>

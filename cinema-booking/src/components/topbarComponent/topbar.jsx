@@ -1,3 +1,4 @@
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
@@ -68,6 +69,38 @@ const TopbarComponent = () => {
                 }}
               >
                 Session
+              </span>
+            </div>
+          </li>
+
+          <li className="nav-item dropdown" >
+            <span
+              className="nav-link dropdown-toggle "
+              id="navbarDropdown2"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              
+            >
+           <FontAwesomeIcon icon={faUser} />
+            </span>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown2">
+              <span
+                className="dropdown-item"
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Log In
+              </span>
+              <span
+                className="dropdown-item"
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
+                Sign Up
               </span>
             </div>
           </li>
