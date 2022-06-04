@@ -43,7 +43,7 @@ const TopbarComponent = () => {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Dropdown
+              Admin Dropdown
             </span>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <span
@@ -72,8 +72,14 @@ const TopbarComponent = () => {
               </span>
             </div>
           </li>
-
-          <li className="nav-item dropdown" >
+          <li className="nav-item">
+            <span className="nav-link" onClick={() => {
+                  navigate("/sessionList");
+                }}>
+              Link
+            </span>
+          </li>
+          <li className="nav-item dropdown">
             <span
               className="nav-link dropdown-toggle "
               id="navbarDropdown2"
@@ -81,9 +87,8 @@ const TopbarComponent = () => {
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-              
             >
-           <FontAwesomeIcon icon={faUser} />
+              <FontAwesomeIcon icon={faUser} />
             </span>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown2">
               <span

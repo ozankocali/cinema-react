@@ -15,6 +15,7 @@ import PurchasePageComponent from "./components/purchasePageComponent/purchasePa
 import SignUpPageComponent from "./components/signUpPageComponent/signUpPageComponent";
 import AfterPaymentPageComponent from "./components/afterPaymentPageComponent/afterPaymentPageComponent";
 import MovieDetailsPageComponent from "./components/movieDetailPageComponent/movieDetailPageComponent";
+import BookingSessionPageComponent from "./components/bookingSessionsPageComponent/bookingSessionsPageComponent";
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
@@ -40,6 +41,7 @@ function App() {
           <Route exact path="signup" element={<SignUpPageComponent />} />
           <Route exact path="afterPayment" element={<AfterPaymentPageComponent />} />
           <Route exact path="detail/:id" element={<MovieDetailsPageComponent />} />
+          <Route exact path="sessionList" element={<BookingSessionPageComponent />} />
         </Routes>
       </BrowserRouter>
     </div>
