@@ -22,25 +22,25 @@ const MovieDetailsPageComponent = (props) => {
             alt=""
           />
         </div>
+      </div>
 
-        <div className="card mt-2" style={{ textAlign: "center" }}>
-          <div className="row">
-            <h4 style={{ textAlign: "center" }}>Movie Name:</h4>
-            <h4 style={{ textAlign: "center" }}>{movie.name}</h4>
-          </div>
-          <div className="row">
-            <h4 style={{ textAlign: "center" }}>Movie Director:</h4>
-            <h4 style={{ textAlign: "center" }}>{movie.director}</h4>
-          </div>
+      <div className="card mt-2" style={{ textAlign: "center" }}>
+        <div className="row ml-2">
+          <h4 style={{ textAlign: "center" }}>Movie Name:</h4>
+          <h4 style={{ textAlign: "center" }}>{movie.name}</h4>
+        </div>
+        <div className="row ml-2">
+          <h4 style={{ textAlign: "center" }}>Movie Director:</h4>
+          <h4 style={{ textAlign: "center" }}>{movie.director}</h4>
+        </div>
 
-          <div className="row">
-            <h4 style={{ textAlign: "center" }}>Movie Genre:</h4>
-            <h4 style={{ textAlign: "center" }}>{movie.genre}</h4>
-          </div>
-          <div className="row">
-            <h4 style={{ textAlign: "center" }}>Movie Ticket Price:</h4>
-            <h4 style={{ textAlign: "center" }}>{movie.ticketPrice} ₺</h4>
-          </div>
+        <div className="row ml-2">
+          <h4 style={{ textAlign: "center" }}>Movie Genre:</h4>
+          <h4 style={{ textAlign: "center" }}>{movie.genre}</h4>
+        </div>
+        <div className="row ml-2">
+          <h4 style={{ textAlign: "center" }}>Movie Ticket Price:</h4>
+          <h4 style={{ textAlign: "center" }}>{movie.ticketPrice} ₺</h4>
         </div>
       </div>
     </div>

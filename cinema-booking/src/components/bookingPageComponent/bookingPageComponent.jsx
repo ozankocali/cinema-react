@@ -45,7 +45,7 @@ const BookingPageComponent = (props) => {
       if (!selectedList.includes(seatNumber)) {
         selectedList.push(seatNumber);
         document.getElementById("selectedSeats").innerHTML = selectedList;
-        document.getElementById("cost").innerHTML = selectedList.length * 15;
+        document.getElementById("cost").innerHTML = selectedList.length * parseInt(session.movie.ticketPrice);
         seatList.forEach((seat) => {
           if (selectedList.includes(parseInt(seat.props.children.key))) {
             document.getElementById(seat.props.children.key).style.color =
@@ -60,7 +60,7 @@ const BookingPageComponent = (props) => {
           }
           selectedList = templist;
           document.getElementById("selectedSeats").innerHTML = selectedList;
-          document.getElementById("cost").innerHTML = selectedList.length * 15;
+          document.getElementById("cost").innerHTML = selectedList.length * parseInt(session.movie.ticketPrice);
           
           seatList.forEach((seat) => {
             if (selectedList.includes(parseInt(seat.props.children.key))) {

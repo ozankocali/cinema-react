@@ -62,20 +62,22 @@ const PurchasePageComponent = (props) => {
           <div className="card">
             <div className="col">
               <div className="row">
-                <h3>movie:</h3>
+                <h3>Movie:</h3>
                 <h3>{purchase?.session?.movie?.name}</h3>
               </div>
               <div className="row">
-                <h3>theatre:</h3>
+                <h3>Theatre:</h3>
                 <h3>{purchase?.session?.theatre?.name}</h3>
               </div>
               <div className="row">
-                <h3>seats:</h3>
-                <h6>{purchase?.selectedSeats}</h6>
+                <h3>Seats:</h3>
+                {purchase?.selectedSeats.map((selectedSeat) => {
+                  return <h3>{selectedSeat}</h3>;
+                })}
               </div>
               <div className="row">
-                <h3>cost:</h3>
-                <h3>{purchase?.selectedSeats?.length * 15}</h3>
+                <h3>Cost:</h3>
+                <h3>{purchase?.selectedSeats?.length * parseInt(purchase.session.movie.ticketPrice)} ₺</h3>
               </div>
             </div>
           </div>
