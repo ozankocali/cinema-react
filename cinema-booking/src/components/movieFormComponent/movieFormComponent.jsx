@@ -1,8 +1,10 @@
 import {
   faBarsStaggered,
+  faClapperboard,
   faFilm,
   faIdCard,
   faImage,
+  faMoneyBill,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InputText } from "primereact/inputtext";
@@ -20,6 +22,8 @@ const MovieFormComponent = (props) => {
     name: "",
     genre: "",
     image: "",
+    director:"",
+    ticketPrice:0
   };
 
   const handleChange = (event) => {
@@ -91,6 +95,30 @@ const MovieFormComponent = (props) => {
             value={inputs.image || ""}
             onChange={handleChange}
             placeholder="Image"
+          />
+        </div>
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+            <FontAwesomeIcon icon={faClapperboard} />
+          </span>
+          <InputText
+            type="text"
+            name="director"
+            value={inputs.director || ""}
+            onChange={handleChange}
+            placeholder="Director"
+          />
+        </div>
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+            <FontAwesomeIcon icon={faMoneyBill} />
+          </span>
+          <InputText
+            type="number"
+            name="ticketPrice"
+            value={inputs.ticketPrice || ""}
+            onChange={handleChange}
+            placeholder="Ticket Price"
           />
         </div>
         <button type="submit" class="btn btn-primary mt-2">
