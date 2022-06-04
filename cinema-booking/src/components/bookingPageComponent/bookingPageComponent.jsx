@@ -13,7 +13,7 @@ const BookingPageComponent = (props) => {
   )[0];
 
   const seatList = [];
-  const selectedList = [];
+  let selectedList = [];
 
   const newPurchase = {
     session: {},
@@ -52,6 +52,26 @@ const BookingPageComponent = (props) => {
               "yellow";
           }
         });
+      } else {
+        const templist = [];
+        selectedList.forEach((seat) => {
+          if (seat !== seatNumber) {
+            templist.push(seat);
+          }
+          selectedList = templist;
+          document.getElementById("selectedSeats").innerHTML = selectedList;
+          document.getElementById("cost").innerHTML = selectedList.length * 15;
+          
+          seatList.forEach((seat) => {
+            if (selectedList.includes(parseInt(seat.props.children.key))) {
+              document.getElementById(seat.props.children.key).style.color =
+                "yellow";
+            }else{
+              document.getElementById(seat.props.children.key).style.color =
+                "black";
+            }
+          });
+        });
       }
     }
   };
@@ -73,7 +93,7 @@ const BookingPageComponent = (props) => {
             borderTopRightRadius: "10px",
             margin: "10px",
             userSelect: "none",
-            textAlign:"center"
+            textAlign: "center",
           }}
         >
           Seat Number: {i}
@@ -182,7 +202,7 @@ const BookingPageComponent = (props) => {
               borderTopRightRadius: "10px",
               userSelect: "none",
               textAlign: "center",
-              marginLeft:"460px",
+              marginLeft: "460px",
             }}
           >
             Door
