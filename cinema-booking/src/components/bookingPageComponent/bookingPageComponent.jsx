@@ -145,6 +145,10 @@ const BookingPageComponent = (props) => {
                 <h3>{session.theatre.name}</h3>
               </div>
               <div className="row">
+                <h3>Date:</h3>
+                <h3>{session.date}</h3>
+              </div>
+              <div className="row">
                 <h3>Seat Layout:</h3>
               </div>
             </div>

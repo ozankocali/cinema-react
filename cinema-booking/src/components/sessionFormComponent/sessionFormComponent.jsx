@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addSession } from "../../store/sessionStore";
 import { Dropdown } from "primereact/dropdown";
+import { Calendar } from "primereact/calendar";
 
 const SessionFormComponent = (props) => {
   const theatreList = useSelector((state) => state.theatreStore.data);
@@ -30,6 +31,7 @@ const SessionFormComponent = (props) => {
     name: "",
     movie: {},
     theatre: {},
+    date: "",
   };
 
   const handleChange = (event) => {
@@ -103,6 +105,18 @@ const SessionFormComponent = (props) => {
             options={dropdownTheatres}
             onChange={handleChange}
             placeholder={inputs?.theatre?.name || "Select a Theatre"}
+          />
+        </div>
+
+        <div className="p-inputgroup mt-2">
+          <span className="p-inputgroup-addon">
+            <FontAwesomeIcon icon={faFilm} />
+          </span>
+          <Calendar
+            name="date"
+            value={inputs.date || ""}
+            onChange={handleChange}
+            showTime
           />
         </div>
 

@@ -16,6 +16,7 @@ export const sessions = [
       name: "Theatre 1",
       numberOfSeats: "40",
     },
+    date: "2022-06-14T21:57:27.671Z",
     purchasedSeats: [],
   },
   {
@@ -35,6 +36,7 @@ export const sessions = [
       name: "Theatre 2",
       numberOfSeats: "40",
     },
+    date: "2022-06-14T21:57:27.671Z",
     purchasedSeats: [],
   },
 ];
