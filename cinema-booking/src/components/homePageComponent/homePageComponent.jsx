@@ -2,9 +2,11 @@ import "./homePageComponent.css";
 import { Button } from "primereact/button";
 import { Carousel } from "primereact/carousel";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const HomePageComponent = () => {
   const movieList = useSelector((state) => state.movieStore.data);
+  const navigate=useNavigate();
 
   const responsiveOptions = [
     {
@@ -31,6 +33,7 @@ const HomePageComponent = () => {
           style={{ height: "500px", width: "1000px", alignContent: "center" }}
           src={movie.image}
           alt={movie.name}
+          onClick={()=>{navigate("/detail/"+movie.id)}}
         />
         <h5>{movie.name}</h5>
       </div>
