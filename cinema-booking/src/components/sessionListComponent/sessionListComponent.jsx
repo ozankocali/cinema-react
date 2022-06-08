@@ -56,7 +56,7 @@ const SessionListComponent = (props) => {
                   </div>
                   <div className="row">
                     <h5>Salon Kapasitesi: </h5>
-                    <h5>{new Date(session.date).toLocaleTimeString()}</h5>
+                    <h5>{new Date(session.date).toLocaleTimeString([], {timeStyle: 'short'})}</h5>
                   </div>
 
                   <span

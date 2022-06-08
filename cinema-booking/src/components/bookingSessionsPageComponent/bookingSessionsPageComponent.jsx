@@ -19,7 +19,7 @@ const BookingSessionPageComponent = (props) => {
             <div className="col-sm" key={session?.id}>
               <div
                 className="card m-2"
-                style={{ height: "500px", width: "400px" }}
+                style={{ height: "600px", width: "400px" }}
               >
                 <div className="movieImage">
                   <img className="card-img-top " src={session?.movie?.image} />
@@ -40,6 +40,18 @@ const BookingSessionPageComponent = (props) => {
                   <div className="row">
                     <h5>Salon Kapasitesi: </h5>
                     <h5>{session.theatre?.numberOfSeats}</h5>
+                  </div>
+                  <div className="row">
+                    <h5>Seans Tarihi: </h5>
+                    <h5>{new Date(session.date).toLocaleDateString()}</h5>
+                  </div>
+                  <div className="row">
+                    <h5>Salon Kapasitesi: </h5>
+                    <h5>
+                      {new Date(session.date).toLocaleTimeString([], {
+                        timeStyle: "short",
+                      })}
+                    </h5>
                   </div>
 
                   <span

@@ -150,7 +150,7 @@ const BookingPageComponent = (props) => {
               </div>
               <div className="row">
                 <h3>Saat:</h3>
-                <h3>{new Date(session.date).toLocaleTimeString()}</h3>
+                <h3>{new Date(session.date).toLocaleTimeString([], {timeStyle: 'short'})}</h3>
               </div>
               <div className="row">
                 <h3>Yer Planı:</h3>

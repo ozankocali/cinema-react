@@ -11,7 +11,7 @@ export const movies = [
   {
     id: "2",
     name: "The Godfather",
-    genre: "Crime",
+    genre: "Suç",
     image:
       "https://m.media-amazon.com/images/M/MV5BYWNlN2U4YjQtMzI3NC00ZjkxLWEwMTItYWRlNDUxYTYwYjVlXkEyXkFqcGdeQWpvaG5oYXJ0._V1_QL75_UX500_CR0,0,500,281_.jpg",
     ticketPrice: 30,
@@ -20,7 +20,7 @@ export const movies = [
   {
     id: "3",
     name: "Pulp Fiction",
-    genre: "Crime",
+    genre: "Suç",
     image:
       "https://m.media-amazon.com/images/M/MV5BMjAyMjUyNzg1Ml5BMl5BanBnXkFtZTgwNzAwMzg5MTE@._V1_.jpg",
     ticketPrice: 30,
@@ -41,7 +41,7 @@ export const movies = [
   {
     id: "5",
     name: "Ice Age",
-    genre: "Animation",
+    genre: "Animasyon",
     image:"https://images.mubicdn.net/images/film/3387/cache-34479-1445895742/image-w1280.jpg",
     ticketPrice: 30,
     director:"Carlos Saldanha"

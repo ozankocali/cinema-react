@@ -1,7 +1,7 @@
 export const sessions = [
   {
     id: "1",
-    name: "session",
+    name: "Seans 1",
     movie: {
       id: "1",
       name: "The Shawshank Redemption",
@@ -13,35 +13,35 @@ export const sessions = [
     },
     theatre: {
       id: "1",
-      name: "Theatre 1",
+      name: "Salon 1",
       numberOfSeats: "40",
     },
-    date: "2022-06-14T21:57:27.671Z",
+    date: "2022-06-08T17:00:27.394Z",
     purchasedSeats: [],
   },
   {
     id: "2",
-    name: "session",
+    name: "Seans 2",
     movie: {
       id: "2",
       name: "The Godfather",
-      genre: "Crime",
+      genre: "Suç",
       image:
         "https://m.media-amazon.com/images/M/MV5BYWNlN2U4YjQtMzI3NC00ZjkxLWEwMTItYWRlNDUxYTYwYjVlXkEyXkFqcGdeQWpvaG5oYXJ0._V1_QL75_UX500_CR0,0,500,281_.jpg",
       ticketPrice: 30,
       director: "Francis Ford Coppola",
     },
     theatre: {
-      id: "2",
-      name: "Theatre 2",
+      id: "1",
+      name: "Salon 1",
       numberOfSeats: "40",
     },
-    date: "2022-06-14T21:57:27.671Z",
+    date: "2022-06-08T17:30:27.394Z",
     purchasedSeats: [],
   },
   {
-    id: "2",
-    name: "session",
+    id: "3",
+    name: "Seans 3",
     movie: {
       id: "4",
       name: "Fight Club",
@@ -52,11 +52,11 @@ export const sessions = [
       director: "David Fincher",
     },
     theatre: {
-      id: "2",
-      name: "Theatre 2",
+      id: "1",
+      name: "Salon 1",
       numberOfSeats: "40",
     },
-    date: "2022-06-14T21:57:27.671Z",
+    date: "2022-06-08T18:30:27.394Z",
     purchasedSeats: [],
   },
 ];
