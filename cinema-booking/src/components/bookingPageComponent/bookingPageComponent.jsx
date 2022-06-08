@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { addPurchase } from "../../store/purchaseStore";
+import './bookingPageComponent.css'
 
 const BookingPageComponent = (props) => {
   const params = useParams();
@@ -81,20 +82,10 @@ const BookingPageComponent = (props) => {
     seatList.push(
       <div>
         <div
-          className="container"
+          className="container myContainer"
           id={id}
           key={i}
           onClick={() => selectSeat(i)}
-          style={{
-            height: "100px",
-            width: "100px",
-            border: "1px solid",
-            borderTopLeftRadius: "10px",
-            borderTopRightRadius: "10px",
-            margin: "10px",
-            userSelect: "none",
-            textAlign: "center",
-          }}
         >
           Koltuk Numarası: {i}
         </div>

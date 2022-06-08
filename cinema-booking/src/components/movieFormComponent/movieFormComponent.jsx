@@ -43,7 +43,7 @@ const MovieFormComponent = (props) => {
 
   return (
     <div className="container">
-      <h1>Add New Movie</h1>
+      <h1 style={{"textAlign":"center"}}>Film Ekle</h1>
       <form onSubmit={handleSubmit}>
         <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
@@ -67,7 +67,7 @@ const MovieFormComponent = (props) => {
             name="name"
             value={inputs.name || ""}
             onChange={handleChange}
-            placeholder="Name"
+            placeholder="Ad"
           />
         </div>
 
@@ -80,7 +80,7 @@ const MovieFormComponent = (props) => {
             name="genre"
             value={inputs.genre || ""}
             onChange={handleChange}
-            placeholder="Genre"
+            placeholder="Tür"
           />
         </div>
 
@@ -93,7 +93,7 @@ const MovieFormComponent = (props) => {
             name="image"
             value={inputs.image || ""}
             onChange={handleChange}
-            placeholder="Image"
+            placeholder="Fotoğraf"
           />
         </div>
         <div className="p-inputgroup mt-2">
@@ -105,7 +105,7 @@ const MovieFormComponent = (props) => {
             name="director"
             value={inputs.director || ""}
             onChange={handleChange}
-            placeholder="Director"
+            placeholder="Yönetmen"
           />
         </div>
         <div className="p-inputgroup mt-2">
@@ -117,11 +117,11 @@ const MovieFormComponent = (props) => {
             name="ticketPrice"
             value={inputs.ticketPrice || ""}
             onChange={handleChange}
-            placeholder="Ticket Price"
+            placeholder="Bilet Ücreti"
           />
         </div>
         <button type="submit" class="btn btn-primary mt-2">
-          Send
+          Kaydet
         </button>
       </form>
     </div>

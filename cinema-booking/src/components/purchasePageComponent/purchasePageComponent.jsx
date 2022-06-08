@@ -70,13 +70,15 @@ const PurchasePageComponent = (props) => {
               </div>
               <div className="row">
                 <h3>Koltuklar:</h3>
-                {purchase?.selectedSeats.map((selectedSeat) => {
-                  return <h3>{selectedSeat}</h3>;
-                })}
+                <h3>{purchase.selectedSeats.join(",")}</h3>
               </div>
               <div className="row">
                 <h3>Ücret:</h3>
-                <h3>{purchase?.selectedSeats?.length * parseInt(purchase.session.movie.ticketPrice)} ₺</h3>
+                <h3>
+                  {purchase?.selectedSeats?.length *
+                    parseInt(purchase.session.movie.ticketPrice)}{" "}
+                  ₺
+                </h3>
               </div>
             </div>
           </div>

@@ -1,0 +1,10 @@
+.myContainer {
+  height: 100px;
+  width: 100px;
+  border: 1px solid;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 10px;
+  user-select: none;
+  text-align: center;
+}
