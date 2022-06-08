@@ -1,4 +1,4 @@
-import { faFilm, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import { faFilm, faIdCard, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
@@ -90,7 +90,7 @@ const PurchasePageComponent = (props) => {
           <form onSubmit={handleSubmit}>
             <div className="p-inputgroup mt-2">
               <span className="p-inputgroup-addon">
-                <FontAwesomeIcon icon={faFilm} />
+                <FontAwesomeIcon icon={faUser} />
               </span>
               <InputText
                 type="text"
