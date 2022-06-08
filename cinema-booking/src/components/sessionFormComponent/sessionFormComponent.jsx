@@ -32,6 +32,7 @@ const SessionFormComponent = (props) => {
     movie: {},
     theatre: {},
     date: "",
+    purchasedSeats:[]
   };
 
   const handleChange = (event) => {
@@ -41,6 +42,7 @@ const SessionFormComponent = (props) => {
   };
 
   const handleSubmit = (event) => {
+    inputs.purchasedSeats=[]
     event.preventDefault();
     dispatch(addSession({ inputs: inputs }));
     alert(inputs);

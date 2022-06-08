@@ -11,7 +11,7 @@ export const theatres = [
   },
   {
     id: "3",
-    name: "Theatre 1",
+    name: "Theatre 3",
     numberOfSeats: "40",
   },
 ];

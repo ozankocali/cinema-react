@@ -134,19 +134,23 @@ const BookingPageComponent = (props) => {
             <div className="container">
               <div className="row">
                 <h3>Session Name: </h3>
-                <h3>{session.name}</h3>
+                <h3>{session?.name}</h3>
               </div>
               <div className="row">
                 <h3>Movie Name: </h3>
-                <h3>{session.movie.name}</h3>
+                <h3>{session?.movie?.name}</h3>
               </div>
               <div className="row">
                 <h3>Theatre Name:</h3>
-                <h3>{session.theatre.name}</h3>
+                <h3>{session?.theatre?.name}</h3>
               </div>
               <div className="row">
                 <h3>Date:</h3>
-                <h3>{session.date}</h3>
+                <h3>{new Date(session.date).toLocaleDateString()}</h3>
+              </div>
+              <div className="row">
+                <h3>Date:</h3>
+                <h3>{new Date(session.date).toLocaleTimeString()}</h3>
               </div>
               <div className="row">
                 <h3>Seat Layout:</h3>

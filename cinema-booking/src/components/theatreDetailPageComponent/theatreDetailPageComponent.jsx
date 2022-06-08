@@ -5,9 +5,11 @@ const TheatreDetailPageComponent = (props) => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const sessions = useSelector((state) => state.sessionStore.data).filter(
-    (x) => x.theatre.id === params.id
-  );
+  const sessions = useSelector((state) => state.sessionStore.data)
+    .filter((x) => x.theatre.id === params.id)
+    .sort(function (a, b) {
+      return new Date(a.date) - new Date(b.date);
+    });
 
   return (
     <div className="container">
@@ -31,7 +33,7 @@ const TheatreDetailPageComponent = (props) => {
                 <span
                   className="btn btn-primary button"
                   onClick={() => {
-                    navigate("/detail/" + session.movie?.id);
+                    navigate("/booking/" + session.id);
                   }}
                 >
                   Details
