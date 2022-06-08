@@ -31,7 +31,7 @@ const TopbarComponent = () => {
                 navigate("/");
               }}
             >
-              Home <span className="sr-only">(current)</span>
+              Ana Sayfa <span className="sr-only">(current)</span>
             </span>
           </li>
           <li className="nav-item dropdown">
@@ -43,7 +43,7 @@ const TopbarComponent = () => {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Admin Dropdown
+              Admin Paneli
             </span>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <span
@@ -52,7 +52,7 @@ const TopbarComponent = () => {
                   navigate("/movie");
                 }}
               >
-                Movie
+                Filmler
               </span>
               <span
                 className="dropdown-item"
@@ -60,7 +60,7 @@ const TopbarComponent = () => {
                   navigate("/theatre");
                 }}
               >
-                Theatre
+                Salonlar
               </span>
               <span
                 className="dropdown-item"
@@ -68,7 +68,7 @@ const TopbarComponent = () => {
                   navigate("/session");
                 }}
               >
-                Session
+                Seanslar
               </span>
             </div>
           </li>
@@ -76,7 +76,7 @@ const TopbarComponent = () => {
             <span className="nav-link" onClick={() => {
                   navigate("/sessionList");
                 }}>
-              Sessions
+              Seanslar
             </span>
           </li>
           <li className="nav-item dropdown">
@@ -97,7 +97,7 @@ const TopbarComponent = () => {
                   navigate("/login");
                 }}
               >
-                Log In
+                Giriş Yap
               </span>
               <span
                 className="dropdown-item"
@@ -105,7 +105,7 @@ const TopbarComponent = () => {
                   navigate("/signup");
                 }}
               >
-                Sign Up
+                Kaydol
               </span>
             </div>
           </li>

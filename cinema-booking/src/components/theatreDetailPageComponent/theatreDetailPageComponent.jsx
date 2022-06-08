@@ -36,7 +36,7 @@ const TheatreDetailPageComponent = (props) => {
                     navigate("/booking/" + session.id);
                   }}
                 >
-                  Details
+                  Görüntüle
                 </span>
               </div>
             </div>

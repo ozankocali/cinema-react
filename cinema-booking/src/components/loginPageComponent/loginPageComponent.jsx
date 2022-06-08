@@ -33,16 +33,16 @@ const LoginPageComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{ textAlign: "center" }}>Log In</h1>
+      <h1 style={{ textAlign: "center" }}>Giriş Yap</h1>
       <div className="card">
-        <div className="container">
+        <div className="container mt-2">
           <form onSubmit={handleSubmit}>
             <div className="p-inputgroup">
               <span className="p-inputgroup-addon">
                 <i className="pi pi-user"></i>
               </span>
               <InputText
-                placeholder="Username"
+                placeholder="Kullanıcı Adı"
                 type="text"
                 name="username"
                 value={inputs.username || ""}
@@ -59,23 +59,23 @@ const LoginPageComponent = (props) => {
                 name="password"
                 value={inputs.password || ""}
                 onChange={handleChange}
-                placeholder="Password"
+                placeholder="Şifre"
               />
             </div>
 
-            <button type="submit" className="btn btn-success">
-              Log In
+            <button type="submit" className="btn btn-success mt-2">
+              Giriş Yap
             </button>
           </form>
           <small>
-            If you dont have an account{" "}
+           Hesaba sahip değilseniz 
             <span
               style={{ color: "blue" }}
               onClick={() => {
                 navigate("/signup");
               }}
             >
-              click here!
+              {""} buraya tıklayın
             </span>
           </small>
         </div>

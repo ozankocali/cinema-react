@@ -12,25 +12,53 @@ const MovieListComponent = (props) => {
 
   return (
     <div className="container" style={{ textAlign: "center" }}>
+      <h1 style={{ textAlign: "center" }}>Film Listesi</h1>
       <span
         onClick={() => {
           navigate("/movieForm");
         }}
         className="btn btn-primary addMovie"
       >
-        Add Movie
+        Film Ekle
       </span>
+
       <div className="row">
         {movieList.map((movie) => {
           return (
             <div className="col-sm" key={movie.id}>
-              <div className="card m-2" style={{"height":"400px","width":"400px"}}>
+              <div
+                className="card m-2"
+                style={{ height: "400px", width: "400px" }}
+              >
                 <div className="movieImage">
-                  <img className="card-img-top" src={movie.image}  style={{"maxHeight":"200px"}} />
+                  <img
+                    className="card-img-top"
+                    src={movie.image}
+                    style={{ maxHeight: "200px" }}
+                  />
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">{movie.name}</h5>
-                  <h6>{movie.genre}</h6>
+                  <div className="row">
+                    <h5>Film Adı:</h5>
+                    <h5>
+                      {""}
+                      {movie.name}
+                    </h5>
+                  </div>
+                  <div className="row">
+                    <h5>Film Türü:</h5>
+                    <h5>
+                      {""}
+                      {movie.genre}
+                    </h5>
+                  </div>
+                  <div className="row">
+                    <h5>Film Ücreti:</h5>
+                    <h5>
+                      {""}
+                      {movie.ticketPrice}₺
+                    </h5>
+                  </div>
                   <span
                     href="#"
                     className="btn btn-primary"
@@ -38,7 +66,7 @@ const MovieListComponent = (props) => {
                       dispatch(deleteMovie(movie));
                     }}
                   >
-                    Delete
+                    Sil
                   </span>
                   <span
                     className="btn btn-primary button"
@@ -46,7 +74,7 @@ const MovieListComponent = (props) => {
                       navigate("/detail/" + movie?.id);
                     }}
                   >
-                    Details
+                    Görüntüle
                   </span>
                 </div>
               </div>

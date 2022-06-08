@@ -10,7 +10,9 @@ const BookingSessionPageComponent = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="container" style={{"textAlign":"center"}}>
+    <div className="container" style={{ textAlign: "center" }}>
+      <h1 style={{ textAlign: "center" }}>Seans Listesi</h1>
+
       <div className="row">
         {sessionList.map((session) => {
           return (
@@ -18,35 +20,35 @@ const BookingSessionPageComponent = (props) => {
               <div
                 className="card m-2"
                 style={{ height: "500px", width: "400px" }}
-              ><div className="movieImage">
-                <img className="card-img-top " src={session?.movie?.image} />
+              >
+                <div className="movieImage">
+                  <img className="card-img-top " src={session?.movie?.image} />
                 </div>
                 <div className="card-body">
-                <div className="row">
-                    <h5>Session Name: </h5>
+                  <div className="row">
+                    <h5>Seans Adı: </h5>
                     <h5 className="card-title">{session?.name}</h5>
                   </div>
                   <div className="row">
-                    <h5>Movie Name: </h5>
+                    <h5>Film Adı: </h5>
                     <h5 className="card-title">{session?.movie?.name}</h5>
                   </div>
                   <div className="row">
-                    <h5>Theatre Name: </h5>
+                    <h5>Salon Adı: </h5>
                     <h5 className="card-title">{session?.theatre?.name}</h5>
                   </div>
                   <div className="row">
-                    <h5>Number of Seats: </h5>
+                    <h5>Salon Kapasitesi: </h5>
                     <h5>{session.theatre?.numberOfSeats}</h5>
                   </div>
 
                   <span
-                   
                     className="btn btn-primary button"
                     onClick={() => {
-                     navigate("/booking/"+session?.id);
+                      navigate("/booking/" + session?.id);
                     }}
                   >
-                    Details
+                    Görüntüle
                   </span>
                 </div>
               </div>

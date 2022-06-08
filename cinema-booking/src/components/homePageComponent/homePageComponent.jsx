@@ -42,7 +42,7 @@ const HomePageComponent = () => {
 
   return (
     <div className="container" style={{ textAlign: "center" }}>
-      <h1>Films Now Showing</h1>
+      <h1>Vizyondaki Filmler</h1>
       <Carousel
         numVisible={1}
         numScroll={1}

@@ -39,7 +39,7 @@ const SignUpPageComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{ textAlign: "center" }}>Sign Up</h1>
+      <h1 style={{ textAlign: "center" }}>Kaydol</h1>
       <form onSubmit={handleSubmit}>
         <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
@@ -63,7 +63,7 @@ const SignUpPageComponent = (props) => {
             name="username"
             value={inputs.username || ""}
             onChange={handleChange}
-            placeholder="Username"
+            placeholder="Kullanıcı Adı"
           />
         </div>
 
@@ -76,7 +76,7 @@ const SignUpPageComponent = (props) => {
             name="fullname"
             value={inputs.fullname || ""}
             onChange={handleChange}
-            placeholder="Full Name"
+            placeholder="Tam Ad"
           />
         </div>
 
@@ -102,7 +102,7 @@ const SignUpPageComponent = (props) => {
             name="role"
             value={inputs.role || ""}
             onChange={handleChange}
-            placeholder="Role"
+            placeholder="Rol"
           />
         </div>
 
@@ -115,11 +115,11 @@ const SignUpPageComponent = (props) => {
             name="password"
             value={inputs.password || ""}
             onChange={handleChange}
-            placeholder="Password"
+            placeholder="Şifre"
           />
         </div>
         <button type="submit" className="btn btn-success mt-2">
-          Sign Up
+          Kaydol
         </button>
       </form>
     </div>

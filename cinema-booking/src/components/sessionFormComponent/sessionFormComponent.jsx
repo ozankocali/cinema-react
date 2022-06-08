@@ -54,7 +54,7 @@ const SessionFormComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{ textAlign: "center" }}>Add New Session</h1>
+      <h1 style={{ textAlign: "center" }}>Yeni Seans Ekle</h1>
       <form onSubmit={handleSubmit}>
         <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
@@ -78,7 +78,7 @@ const SessionFormComponent = (props) => {
             name="name"
             value={inputs.name || ""}
             onChange={handleChange}
-            placeholder="Name"
+            placeholder="Ad"
           />
         </div>
 
@@ -92,7 +92,7 @@ const SessionFormComponent = (props) => {
             value={inputs.movie}
             options={dropdownMovies}
             onChange={handleChange}
-            placeholder={inputs?.movie?.name || "Select a Movie"}
+            placeholder={inputs?.movie?.name || "Film Seçiniz"}
           />
         </div>
 
@@ -106,7 +106,7 @@ const SessionFormComponent = (props) => {
             value={inputs.theatre}
             options={dropdownTheatres}
             onChange={handleChange}
-            placeholder={inputs?.theatre?.name || "Select a Theatre"}
+            placeholder={inputs?.theatre?.name || "Salon Seçiniz"}
           />
         </div>
 
@@ -123,7 +123,7 @@ const SessionFormComponent = (props) => {
         </div>
 
         <button type="submit" className="btn btn-success mt-2">
-          Send
+          Kaydet
         </button>
       </form>
     </div>

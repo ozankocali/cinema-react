@@ -58,25 +58,25 @@ const PurchasePageComponent = (props) => {
     <div>
       <div className="row">
         <div className="container">
-          <h1 style={{ textAlign: "center" }}>Purchase Info</h1>
+          <h1 style={{ textAlign: "center" }}>Satın Alım Bilgisi</h1>
           <div className="card">
             <div className="col">
               <div className="row">
-                <h3>Movie:</h3>
+                <h3>Film:</h3>
                 <h3>{purchase?.session?.movie?.name}</h3>
               </div>
               <div className="row">
-                <h3>Theatre:</h3>
+                <h3>Salon:</h3>
                 <h3>{purchase?.session?.theatre?.name}</h3>
               </div>
               <div className="row">
-                <h3>Seats:</h3>
+                <h3>Koltuklar:</h3>
                 {purchase?.selectedSeats.map((selectedSeat) => {
                   return <h3>{selectedSeat}</h3>;
                 })}
               </div>
               <div className="row">
-                <h3>Cost:</h3>
+                <h3>Ücret:</h3>
                 <h3>{purchase?.selectedSeats?.length * parseInt(purchase.session.movie.ticketPrice)} ₺</h3>
               </div>
             </div>
@@ -85,7 +85,7 @@ const PurchasePageComponent = (props) => {
       </div>
       <div className="row">
         <div className="container">
-          <h1 style={{ textAlign: "center" }}>Payment Info</h1>
+          <h1 style={{ textAlign: "center" }}>Ödeme Bilgisi</h1>
           <form onSubmit={handleSubmit}>
             <div className="p-inputgroup mt-2">
               <span className="p-inputgroup-addon">
@@ -144,7 +144,7 @@ const PurchasePageComponent = (props) => {
               purchaseAction(purchase.selectedSeats);
             }}
           >
-            purchase
+            Satın Al
           </span>
         </div>
       </div>

@@ -39,4 +39,24 @@ export const sessions = [
     date: "2022-06-14T21:57:27.671Z",
     purchasedSeats: [],
   },
+  {
+    id: "2",
+    name: "session",
+    movie: {
+      id: "4",
+      name: "Fight Club",
+      genre: "Drama",
+      image:
+        "https://i.haberglobal.com.tr/rcman/Cw1600h900q95gm/storage/files/images/2022/01/25/cinden-fight-cluba-yeni-son-suclular-yakalandi-cpFT.jpg",
+      ticketPrice: 30,
+      director: "David Fincher",
+    },
+    theatre: {
+      id: "2",
+      name: "Theatre 2",
+      numberOfSeats: "40",
+    },
+    date: "2022-06-14T21:57:27.671Z",
+    purchasedSeats: [],
+  },
 ];

@@ -35,7 +35,7 @@ const TheatreFormComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{"textAlign":"center"}}>Add New Session</h1>
+      <h1 style={{"textAlign":"center"}}>Salon Ekle</h1>
 
       <form onSubmit={handleSubmit}>
       <div className="p-inputgroup mt-2">
@@ -60,7 +60,7 @@ const TheatreFormComponent = (props) => {
             name="name"
             value={inputs.name || ""}
             onChange={handleChange}
-            placeholder="Name"
+            placeholder="Ad"
           />
         </div>
 
@@ -74,14 +74,14 @@ const TheatreFormComponent = (props) => {
             name="numberOfSeats"
             value={inputs.numberOfSeats || ""}
             onChange={handleChange}
-            placeholder="Number of Seats"
+            placeholder="Koltuk Sayısı"
           />
         </div>
 
         
         <button type="submit" className="btn btn-success mt-2">
           {" "}
-          Send
+          Kaydet
         </button>
       </form>
     </div>

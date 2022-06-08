@@ -11,13 +11,14 @@ const TheatreListComponent = (props) => {
 
   return (
     <div className="container" style={{ textAlign: "center" }}>
+      <h1 style={{"textAlign":"center"}} >Salon Listesi</h1>
       <span
         onClick={() => {
           navigate("/theatreForm");
         }}
         className="btn btn-primary"
       >
-        Add Theatre
+        Salon Ekle
       </span>
       <div className="row">
         {theatreList.map((theatre) => {
@@ -25,9 +26,9 @@ const TheatreListComponent = (props) => {
             <div className="col-sm" key={theatre.id}>
               <div className="card">
                 <div className="card-body">
-                  <h4>Theatre Name:</h4>
+                  <h4>Salon Adı:</h4>
                   <h5 className="card-title">{theatre.name}</h5>
-                  <h4>Theatre Capacity:</h4>
+                  <h4>Salon Kapasitesi:</h4>
                   <h6>{theatre.numberOfSeats}</h6>
                   <span
                     href="#"
@@ -45,7 +46,7 @@ const TheatreListComponent = (props) => {
                       navigate("/theatre/" + theatre.id);
                     }}
                   >
-                    Details
+                    Görüntüle
                   </span>
                 </div>
               </div>

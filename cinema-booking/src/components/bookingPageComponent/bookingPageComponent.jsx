@@ -96,7 +96,7 @@ const BookingPageComponent = (props) => {
             textAlign: "center",
           }}
         >
-          Seat Number: {i}
+          Koltuk Numarası: {i}
         </div>
       </div>
     );
@@ -127,44 +127,44 @@ const BookingPageComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{ textAlign: "center" }}>Select Your Seat</h1>
+      <h1 style={{ textAlign: "center" }}>Koltuk Seçiniz</h1>
       <div className="card">
         <div className="row">
           <div className="col">
             <div className="container">
               <div className="row">
-                <h3>Session Name: </h3>
+                <h3>Seans Adı: </h3>
                 <h3>{session?.name}</h3>
               </div>
               <div className="row">
-                <h3>Movie Name: </h3>
+                <h3>Film Adı: </h3>
                 <h3>{session?.movie?.name}</h3>
               </div>
               <div className="row">
-                <h3>Theatre Name:</h3>
+                <h3>Salon Adı:</h3>
                 <h3>{session?.theatre?.name}</h3>
               </div>
               <div className="row">
-                <h3>Date:</h3>
+                <h3>Tarih:</h3>
                 <h3>{new Date(session.date).toLocaleDateString()}</h3>
               </div>
               <div className="row">
-                <h3>Date:</h3>
+                <h3>Saat:</h3>
                 <h3>{new Date(session.date).toLocaleTimeString()}</h3>
               </div>
               <div className="row">
-                <h3>Seat Layout:</h3>
+                <h3>Yer Planı:</h3>
               </div>
             </div>
           </div>
           <div className="col">
             <div className="container">
               <div className="row">
-                <h3>Selected Seats:</h3>
+                <h3>Seçili Koltuklar:</h3>
                 <h3 id="selectedSeats"></h3>
               </div>
               <div className="row">
-                <h3>Costs:</h3>
+                <h3>Fiyat:</h3>
                 <h3 id="cost"></h3>
               </div>
               <span
@@ -174,7 +174,7 @@ const BookingPageComponent = (props) => {
                   purchase();
                 }}
               >
-                purchase
+                Satın Al
               </span>
             </div>
           </div>
@@ -194,7 +194,7 @@ const BookingPageComponent = (props) => {
             textAlign: "center",
           }}
         >
-          Screen
+          Perde
         </div>
       </div>
       <div className="row">
@@ -213,7 +213,7 @@ const BookingPageComponent = (props) => {
               marginLeft: "460px",
             }}
           >
-            Door
+            Kapı
           </div>
         </div>
       </div>

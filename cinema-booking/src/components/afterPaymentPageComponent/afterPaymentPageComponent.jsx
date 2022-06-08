@@ -14,9 +14,9 @@ const AfterPaymentPageComponent = (props) => {
         className="card"
       >
         <div className="container">
-          <h1>Dear {user.fullName}</h1>
-          <h1>YOUR TICKETS BOOKED SUCCESSFULLY</h1>
-          <h4>Your receipt sent to {user.email}</h4>
+          <h1>Sayın {user.fullName}</h1>
+          <h1>Biletleriniz Başarıyla Rezerve Edildi</h1>
+          <h4>Faturanız {user.email} Adresine Gönderildi </h4>
           <FontAwesomeIcon size="6x" color="green" icon={faMoneyBillTransfer} /><br></br>
           <button
             className="btn btn-success"
@@ -24,7 +24,7 @@ const AfterPaymentPageComponent = (props) => {
               navigate("/");
             }}
           >
-            Go To Home Page
+            Ana Sayfaya Git
           </button>
         </div>
       </div>

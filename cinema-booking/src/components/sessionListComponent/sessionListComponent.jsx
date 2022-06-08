@@ -12,6 +12,7 @@ const SessionListComponent = (props) => {
 
   return (
     <div className="container" style={{ textAlign: "center" }}>
+      <h1 style={{ textAlign: "center" }}>Seans Listesi</h1>
       <span
         onClick={() => {
           navigate("/sessionForm");
@@ -20,6 +21,7 @@ const SessionListComponent = (props) => {
       >
         Add Session
       </span>
+
       <div className="row">
         {sessionList.map((session) => {
           return (
@@ -33,19 +35,19 @@ const SessionListComponent = (props) => {
                 </div>
                 <div className="card-body">
                   <div className="row">
-                    <h5>Session Name: </h5>
+                    <h5>Seans Adı: </h5>
                     <h5 className="card-title">{session?.name}</h5>
                   </div>
                   <div className="row">
-                    <h5>Movie Name: </h5>
+                    <h5>Film Adı: </h5>
                     <h5 className="card-title">{session?.movie?.name}</h5>
                   </div>
                   <div className="row">
-                    <h5>Theatre Name: </h5>
+                    <h5>Salon Adı: </h5>
                     <h5 className="card-title">{session?.theatre?.name}</h5>
                   </div>
                   <div className="row">
-                    <h5>Number of Seats: </h5>
+                    <h5>Salon Kapasitesi: </h5>
                     <h5>{session.theatre?.numberOfSeats}</h5>
                   </div>
 
@@ -55,7 +57,7 @@ const SessionListComponent = (props) => {
                       dispatch(deleteSession(session));
                     }}
                   >
-                    Delete
+                    Sil
                   </span>
                   <span
                     className="btn btn-primary button"
@@ -63,7 +65,7 @@ const SessionListComponent = (props) => {
                       navigate("/booking/" + session?.id);
                     }}
                   >
-                    Details
+                    Görüntüle
                   </span>
                 </div>
               </div>
@@ -71,6 +73,7 @@ const SessionListComponent = (props) => {
           );
         })}
       </div>
+      
     </div>
   );
 };
