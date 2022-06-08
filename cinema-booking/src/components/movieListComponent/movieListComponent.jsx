@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { movies } from "../../data/movieData";
 import movieStore, { deleteMovie } from "../../store/movieStore";
-import "./movieListComponent.css"
+import "./movieListComponent.css";
 
 const MovieListComponent = (props) => {
   const movieList = useSelector((state) => state.movieStore.data);
@@ -11,7 +11,7 @@ const MovieListComponent = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="container" style={{"textAlign":"center"}}>
+    <div className="container" style={{ textAlign: "center" }}>
       <span
         onClick={() => {
           navigate("/movieForm");
@@ -24,16 +24,20 @@ const MovieListComponent = (props) => {
         {movieList.map((movie) => {
           return (
             <div className="col-sm" key={movie.id}>
-              <div
-                className="card"
-              >
+              <div className="card m-2" style={{"height":"400px","width":"400px"}}>
                 <div className="movieImage">
-                <img className="card-img-top" src={movie.image} />
+                  <img className="card-img-top" src={movie.image}  />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">{movie.name}</h5>
                   <h6>{movie.genre}</h6>
-                  <a href="#" className="btn btn-primary" onClick={()=>{dispatch(deleteMovie(movie))}}>
+                  <a
+                    href="#"
+                    className="btn btn-primary"
+                    onClick={() => {
+                      dispatch(deleteMovie(movie));
+                    }}
+                  >
                     Delete
                   </a>
                 </div>

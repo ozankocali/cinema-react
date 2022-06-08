@@ -11,14 +11,6 @@ const BookingSessionPageComponent = (props) => {
 
   return (
     <div className="container" style={{"textAlign":"center"}}>
-      <span
-        onClick={() => {
-          navigate("/sessionForm");
-        }}
-        className="btn btn-primary"
-      >
-        Add Session
-      </span>
       <div className="row">
         {sessionList.map((session) => {
           return (

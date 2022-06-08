@@ -76,7 +76,7 @@ const TopbarComponent = () => {
             <span className="nav-link" onClick={() => {
                   navigate("/sessionList");
                 }}>
-              Link
+              Sessions
             </span>
           </li>
           <li className="nav-item dropdown">
