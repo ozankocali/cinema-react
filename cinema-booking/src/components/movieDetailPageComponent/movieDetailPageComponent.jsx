@@ -18,7 +18,7 @@ const MovieDetailsPageComponent = (props) => {
         <div className="container">
           <img
             src={movie.image}
-            style={{ height: "800px", width: "1000px" }}
+            style={{ height: "600px", width: "800px" }}
             alt=""
           />
         </div>

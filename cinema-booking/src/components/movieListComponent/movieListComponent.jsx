@@ -26,12 +26,12 @@ const MovieListComponent = (props) => {
             <div className="col-sm" key={movie.id}>
               <div className="card m-2" style={{"height":"400px","width":"400px"}}>
                 <div className="movieImage">
-                  <img className="card-img-top" src={movie.image}  />
+                  <img className="card-img-top" src={movie.image}  style={{"maxHeight":"200px"}} />
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">{movie.name}</h5>
                   <h6>{movie.genre}</h6>
-                  <a
+                  <span
                     href="#"
                     className="btn btn-primary"
                     onClick={() => {
@@ -39,7 +39,15 @@ const MovieListComponent = (props) => {
                     }}
                   >
                     Delete
-                  </a>
+                  </span>
+                  <span
+                    className="btn btn-primary button"
+                    onClick={() => {
+                      navigate("/detail/" + movie?.id);
+                    }}
+                  >
+                    Details
+                  </span>
                 </div>
               </div>
             </div>

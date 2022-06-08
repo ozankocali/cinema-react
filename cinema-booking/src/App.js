@@ -20,6 +20,7 @@ import BookingSessionPageComponent from "./components/bookingSessionsPageCompone
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
 import "primeicons/primeicons.css";                                //icons
+import TheatreDetailPageComponent from "./components/theatreDetailPageComponent/theatreDetailPageComponent";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="afterPayment" element={<AfterPaymentPageComponent />} />
           <Route exact path="detail/:id" element={<MovieDetailsPageComponent />} />
           <Route exact path="sessionList" element={<BookingSessionPageComponent />} />
+          <Route exact path="theatre/:id" element={<TheatreDetailPageComponent />} />
         </Routes>
       </BrowserRouter>
     </div>
