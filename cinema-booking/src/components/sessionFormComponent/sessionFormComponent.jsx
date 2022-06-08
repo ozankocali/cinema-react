@@ -1,4 +1,8 @@
-import { faFilm, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarCheck,
+  faFilm,
+  faIdCard,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InputText } from "primereact/inputtext";
 import { useEffect, useState } from "react";
@@ -32,7 +36,7 @@ const SessionFormComponent = (props) => {
     movie: {},
     theatre: {},
     date: "",
-    purchasedSeats:[]
+    purchasedSeats: [],
   };
 
   const handleChange = (event) => {
@@ -42,7 +46,7 @@ const SessionFormComponent = (props) => {
   };
 
   const handleSubmit = (event) => {
-    inputs.purchasedSeats=[]
+    inputs.purchasedSeats = [];
     event.preventDefault();
     dispatch(addSession({ inputs: inputs }));
     alert(inputs);
@@ -112,7 +116,7 @@ const SessionFormComponent = (props) => {
 
         <div className="p-inputgroup mt-2">
           <span className="p-inputgroup-addon">
-            <FontAwesomeIcon icon={faFilm} />
+            <FontAwesomeIcon icon={faCalendarCheck} />
           </span>
           <Calendar
             name="date"
