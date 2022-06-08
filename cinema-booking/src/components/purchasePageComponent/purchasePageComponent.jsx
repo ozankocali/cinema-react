@@ -33,7 +33,6 @@ const PurchasePageComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     //dispatch(addMovie({ inputs: inputs }));
-    alert(inputs.inputs);
   };
 
   const purchase = useSelector((state) => state.purchaseStore.data);

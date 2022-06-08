@@ -24,7 +24,6 @@ const LoginPageComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(login({ inputs: inputs }));
-    alert(inputs);
   };
 
   // useEffect(() => {

@@ -26,7 +26,6 @@ const TheatreFormComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(addTheatre({ inputs: inputs }));
-    alert(inputs);
   };
 
   useEffect(() => {

@@ -17,9 +17,9 @@ const SessionListComponent = (props) => {
         onClick={() => {
           navigate("/sessionForm");
         }}
-        className="btn btn-primary"
+        className="btn btn-success"
       >
-        Add Session
+        Seans Ekle
       </span>
 
       <div className="row">
@@ -60,7 +60,7 @@ const SessionListComponent = (props) => {
                   </div>
 
                   <span
-                    className="btn btn-primary button"
+                    className="btn btn-danger button"
                     onClick={() => {
                       dispatch(deleteSession(session));
                     }}

@@ -17,7 +17,7 @@ const MovieListComponent = (props) => {
         onClick={() => {
           navigate("/movieForm");
         }}
-        className="btn btn-primary addMovie"
+        className="btn btn-success addMovie"
       >
         Film Ekle
       </span>
@@ -69,7 +69,7 @@ const MovieListComponent = (props) => {
                     Sil
                   </span>
                   <span
-                    className="btn btn-primary button"
+                    className="btn btn-danger button"
                     onClick={() => {
                       navigate("/detail/" + movie?.id);
                     }}

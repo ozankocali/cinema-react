@@ -117,8 +117,6 @@ const BookingPageComponent = (props) => {
         document
           .getElementById(seat.props.children.key)
           .removeAttribute("onclick");
-
-        console.log(seat);
       }
     });
 

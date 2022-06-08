@@ -30,7 +30,6 @@ const SignUpPageComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(addUser({ inputs: inputs }));
-    alert(inputs);
   };
 
   useEffect(() => {

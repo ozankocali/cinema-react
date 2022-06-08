@@ -16,7 +16,7 @@ const TheatreListComponent = (props) => {
         onClick={() => {
           navigate("/theatreForm");
         }}
-        className="btn btn-primary"
+        className="btn btn-success"
       >
         Salon Ekle
       </span>
@@ -24,7 +24,7 @@ const TheatreListComponent = (props) => {
         {theatreList.map((theatre) => {
           return (
             <div className="col-sm" key={theatre.id}>
-              <div className="card">
+              <div className="card m-2">
                 <div className="card-body">
                   <h4>Salon Adı:</h4>
                   <h5 className="card-title">{theatre.name}</h5>
@@ -32,12 +32,12 @@ const TheatreListComponent = (props) => {
                   <h6>{theatre.numberOfSeats}</h6>
                   <span
                     href="#"
-                    className="btn btn-primary m-2"
+                    className="btn btn-danger m-2"
                     onClick={() => {
                       dispatch(deleteTheatre(theatre));
                     }}
                   >
-                    Delete
+                    Sil
                   </span>
                   <span
                     href="#"

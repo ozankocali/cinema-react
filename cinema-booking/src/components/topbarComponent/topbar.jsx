@@ -1,9 +1,11 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const TopbarComponent = () => {
   const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.authStore.value.isLoggedIn);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,48 +36,53 @@ const TopbarComponent = () => {
               Ana Sayfa <span className="sr-only">(current)</span>
             </span>
           </li>
-          <li className="nav-item dropdown">
-            <span
-              className="nav-link dropdown-toggle"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Admin Paneli
-            </span>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+          {isLoggedIn && (
+            <li className="nav-item dropdown">
               <span
-                className="dropdown-item"
-                onClick={() => {
-                  navigate("/movie");
-                }}
+                className="nav-link dropdown-toggle"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
-                Filmler
+                Admin Paneli
               </span>
-              <span
-                className="dropdown-item"
-                onClick={() => {
-                  navigate("/theatre");
-                }}
-              >
-                Salonlar
-              </span>
-              <span
-                className="dropdown-item"
-                onClick={() => {
-                  navigate("/session");
-                }}
-              >
-                Seanslar
-              </span>
-            </div>
-          </li>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <span
+                  className="dropdown-item"
+                  onClick={() => {
+                    navigate("/movie");
+                  }}
+                >
+                  Filmler
+                </span>
+                <span
+                  className="dropdown-item"
+                  onClick={() => {
+                    navigate("/theatre");
+                  }}
+                >
+                  Salonlar
+                </span>
+                <span
+                  className="dropdown-item"
+                  onClick={() => {
+                    navigate("/session");
+                  }}
+                >
+                  Seanslar
+                </span>
+              </div>
+            </li>
+          )}
           <li className="nav-item">
-            <span className="nav-link" onClick={() => {
-                  navigate("/sessionList");
-                }}>
+            <span
+              className="nav-link"
+              onClick={() => {
+                navigate("/sessionList");
+              }}
+            >
               Seanslar
             </span>
           </li>

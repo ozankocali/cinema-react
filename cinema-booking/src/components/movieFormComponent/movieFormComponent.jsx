@@ -35,7 +35,6 @@ const MovieFormComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(addMovie({ inputs: inputs }));
-    alert(inputs);
   };
 
   useEffect(() => {

@@ -49,7 +49,6 @@ const SessionFormComponent = (props) => {
     inputs.purchasedSeats = [];
     event.preventDefault();
     dispatch(addSession({ inputs: inputs }));
-    alert(inputs);
   };
 
   useEffect(() => {
